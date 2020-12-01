@@ -332,12 +332,14 @@ void	GUI_CTC_labelTSetNum(uint8_t labelNum, char *str, int32_t setNum)
 
 void	GUI_CTC_buttonTPlus(void)
 {
+	GUI_buttonChangeMainColor(BUTTON_TPLUS_ID, BUTTON_TPLUS_CLICK_COLOR);
 	tempSetNum++;
 	GUI_CTC_labelTSetNum(LABEL_TSET_NUM_ID, &strBufNum[0], tempSetNum);
 }
 
 void	GUI_CTC_buttonTMinus(void)
 {
+	GUI_buttonChangeMainColor(BUTTON_TMINUS_ID, BUTTON_TMINUS_CLICK_COLOR);
 	tempSetNum--;
 	GUI_CTC_labelTSetNum(LABEL_TSET_NUM_ID, &strBufNum[0], tempSetNum);
 }

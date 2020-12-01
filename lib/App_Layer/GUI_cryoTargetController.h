@@ -314,14 +314,16 @@
 	#define	LABEL_ID22_STATE_Y0											0
 	#define	LABEL_ID22_STATE_Y1											34-1
 	#define	LABEL_ID22_STATE_BORDER									2
-	#define	LABEL_ID22_STATE_MAIN_COLOR							0xD6DA
+	#define	LABEL_ID22_STATE_MAIN_COLOR							0xFF20
 	#define	LABEL_ID22_STATE_BORDER_COLOR						0x0000
 	#define	LABEL_ID22_STATE_TEXT										"Œ’À¿∆."
 	#define	LABEL_ID22_STATE_TEXT_COLOR							0x0000
 	#define	LABEL_ID22_STATE_TEXT_MARGIN_X					5
 	#define	LABEL_ID22_STATE_TEXT_MARGIN_Y					0
 	#define	LABEL_ID22_STATE_ACTION_PTR							0
-	
+
+	#define	BUTTON_TPLUS_ID													0
+	#define	BUTTON_TPLUS_CLICK_COLOR								0xFF20
 	#define	BUTTON_ID0_TPLUS_X0											105-1
 	#define	BUTTON_ID0_TPLUS_X1											215-1
 	#define	BUTTON_ID0_TPLUS_Y0											216-1
@@ -336,7 +338,9 @@
 	#define	BUTTON_ID0_TPLUS_STATE									0
 	#define	BUTTON_ID0_TPLUS_DELAY_SEC							100
 	#define	BUTTON_ID0_TPLUS_ACTION_PTR							GUI_CTC_buttonTPlus
-	
+
+	#define	BUTTON_TMINUS_ID												1
+	#define	BUTTON_TMINUS_CLICK_COLOR								0xFF20
 	#define	BUTTON_ID1_TMINUS_X0										105-1
 	#define	BUTTON_ID1_TMINUS_X1										215-1
 	#define	BUTTON_ID1_TMINUS_Y0										140-1
@@ -351,7 +355,9 @@
 	#define	BUTTON_ID1_TMINUS_STATE									0
 	#define	BUTTON_ID1_TMINUS_DELAY_SEC							100
 	#define	BUTTON_ID1_TMINUS_ACTION_PTR						GUI_CTC_buttonTMinus
-	
+
+	#define	BUTTON_SWITCHER_ID											2
+	#define	BUTTON_SWITCHER_CLICK_COLOR							0xFF20
 	#define	BUTTON_SWITCHER_ID											2
 	#define	BUTTON_SWITCHER_TEXT_0									"¬€ À"
 	#define	BUTTON_SWITCHER_TEXT_1									"¬ À"
