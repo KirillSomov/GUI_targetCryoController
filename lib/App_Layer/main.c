@@ -80,7 +80,7 @@ int main(void)
 		
 		if(!FT6236_checkInt())
 		{
-			FT6236_get_Tpoint(&FT6236_Tpoint);
+			
 			
 			// обработка нажатия
 			GUI_Handler();

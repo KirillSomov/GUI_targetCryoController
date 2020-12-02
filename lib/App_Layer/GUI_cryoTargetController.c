@@ -307,16 +307,16 @@ void	GUI_CTC_labelState(uint8_t labelNum,	uint8_t state)
 
 void	GUI_CTC_buttonState(void)
 {
-	if(ObjList.ObjButtonList[BUTTON_SWITCHER_ID].state == 0)
+	if(GUI.objList.ObjButtonList[BUTTON_SWITCHER_ID].state == 0)
 	{
-		ObjList.ObjButtonList[BUTTON_SWITCHER_ID].state = 1;
+		GUI.objList.ObjButtonList[BUTTON_SWITCHER_ID].state = 1;
 		GUI_buttonChangeMainColor(BUTTON_SWITCHER_ID, BUTTON_SWITCHER_MAIN_COLOR_1);
 		GUI_buttonChangeText(BUTTON_SWITCHER_ID, BUTTON_SWITCHER_TEXT_1, 0x0000);
 		GUI_CTC_labelState(LABEL_STATE_ID, 1);
 	}
 	else
 	{
-		ObjList.ObjButtonList[BUTTON_SWITCHER_ID].state = 0;
+		GUI.objList.ObjButtonList[BUTTON_SWITCHER_ID].state = 0;
 		GUI_buttonChangeMainColor(BUTTON_SWITCHER_ID, BUTTON_SWITCHER_MAIN_COLOR_0);
 		GUI_buttonChangeText(BUTTON_SWITCHER_ID, BUTTON_SWITCHER_TEXT_0, 0x0000);
 		GUI_CTC_labelState(LABEL_STATE_ID, 0);

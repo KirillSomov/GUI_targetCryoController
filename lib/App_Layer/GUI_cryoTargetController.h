@@ -277,7 +277,7 @@
 	#define	LABEL_ID19_SENS_8_NUM_ACTION_PTR				0
 	
 	#define	LABEL_TSET_NUM_ID												20
-	#define	LABEL_ID20_TSET_NUM_X0									ObjList.ObjLabelList[10].textLenght+7
+	#define	LABEL_ID20_TSET_NUM_X0									GUI.objList.ObjLabelList[10].textLenght+7
 	#define	LABEL_ID20_TSET_NUM_X1									215-1
 	#define	LABEL_ID20_TSET_NUM_Y0									105-1
 	#define	LABEL_ID20_TSET_NUM_Y1									135-1
@@ -291,7 +291,7 @@
 	#define	LABEL_ID20_TSET_NUM_ACTION_PTR					0
 	
 	#define	LABEL_TCHANGE_NUM_ID										21
-	#define	LABEL_ID21_TCHANGE_NUM_X0								ObjList.ObjLabelList[11].textLenght+5
+	#define	LABEL_ID21_TCHANGE_NUM_X0								GUI.objList.ObjLabelList[11].textLenght+5
 	#define	LABEL_ID21_TCHANGE_NUM_X1								215-1
 	#define	LABEL_ID21_TCHANGE_NUM_Y0								72-1
 	#define	LABEL_ID21_TCHANGE_NUM_Y1								100-1

@@ -78,13 +78,13 @@ void Timer1_IRQHandler(void)
 {
 	for(uint8_t objButNum = 0; objButNum < OBJ_BUTTON_AMOUNT; objButNum++)
 	{
-		if(ObjList.ObjButtonList[objButNum].timerVal > 0)
+		if(GUI.objList.ObjButtonList[objButNum].timerVal > 0)
 		{
-			ObjList.ObjButtonList[objButNum].timerVal--;
+			GUI.objList.ObjButtonList[objButNum].timerVal--;
 		}
 		else
 		{
-			ObjList.ObjButtonList[objButNum].Flag_buttonClicked = 0;
+			GUI.objList.ObjButtonList[objButNum].flag_buttonWasClicked = 0;
 		}
 	}
 	

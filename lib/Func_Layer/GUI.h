@@ -61,9 +61,9 @@
 		uint8_t		state;							//
 		volatile	uint16_t	msDelay;	// задержка до следующего нажатия
 		
-		uint16_t	textLenght;					//
-		uint8_t		Flag_buttonClicked;	// 
-		uint16_t	timerVal;						// 
+		uint16_t	textLenght;							//
+		uint8_t		flag_buttonWasClicked;	// 
+		uint16_t	timerVal;								// 
 		
 		// действие по нажатию кнопки
 		void (*action)(void);		
@@ -108,10 +108,26 @@
 		Object_Label		ObjLabelList[OBJ_LABEL_AMOUNT];				// список лейблов
 		Object_Button		ObjButtonList[OBJ_BUTTON_AMOUNT];			// список кнопок
 		Object_Canvas		ObjCanvasList[OBJ_CANVAS_AMOUNT];			// список холстов
-	}Object_List;
+	}Object_List_t;
+
+	
+	typedef	struct
+	{
+		uint16_t	X;
+		uint16_t	Y;
+	}tPoint_t;
 	
 	
-	extern Object_List ObjList;
+	typedef	struct
+	{
+		uint8_t					flag_touch;
+		tPoint_t				touchPoint;
+		Object_List_t		objList;
+		void 						(*objAction)(void);
+	}GUI_t;
+	
+	
+	extern GUI_t GUI;
 	
 
 	// прототипы функций
@@ -129,8 +145,12 @@
 
 
 	void	GUI_objectListReset(void);												// очистка списка объектов
+	void	GUI_getTouchPoint(void);													// получить координаты нажатия
+	void	GUI_objSetHandlerFunc(void (*objAction)(void));		// установить действия для объектов
+	void	GUI_objHandler(void);															// обработчик объетов
 	void	GUI_Handler(void);																// обработчик нажатия на дисплей
 
+	
 	void	GUI_createLabel(uint16_t	X0,	uint16_t	X1,				// X-координаты	// создать лейбл
 												uint16_t	Y0,	uint16_t	Y1,				// Y-координаты
 												uint16_t	border,									// ширина границ
