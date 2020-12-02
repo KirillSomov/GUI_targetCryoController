@@ -3,45 +3,48 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: µVision V5.31.0.0
-Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: Kirill Somov, Tenzor, LIC=8VR56-D9WNP-1PTZ5-GFTAU-2GW9F-I97I7
+IDE-Version: µVision V5.28.0.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Kirill Somov, University of Dubna, LIC=----
  
 Tool Versions:
-Toolchain:       MDK-ARM Plus  Version: 5.31.0.0
+Toolchain:       MDK-Lite  Version: 5.28.0.0
 Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
-C Compiler:      Armcc.exe V5.06 update 6 (build 750)
-Assembler:       Armasm.exe V5.06 update 6 (build 750)
-Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
-Library Manager: ArmAr.exe V5.06 update 6 (build 750)
-Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
-CPU DLL:         SARMCM3.DLL V5.31.0.0
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+CPU DLL:         SARMCM3.DLL V5.28.0.0
 Dialog DLL:      DCM.DLL V1.17.3.0
-Target DLL:      Segger\JL2CM3.dll V2.99.38.0
-Dialog DLL:      TCM.DLL V1.46.0.0
+Target DLL:      Segger\JL2CM3.dll V2.99.36.0
+Dialog DLL:      TCM.DLL V1.36.2.0
  
 <h2>Project:</h2>
-C:\Users\somov\Documents\GitHub\GUI_targetCryoController\GUI_targetCryoController.uvprojx
+C:\Users\Kirill\Documents\Projects\Keil\1986BE92QI\GUI_targetCryoController\GUI_targetCryoController.uvprojx
 Project File Date:  12/02/2020
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'Target 1'
+compiling GUI_cryoTargetController.c...
 compiling main.c...
 compiling GUI.c...
-compiling GUI_cryoTargetController.c...
-compiling I2C.c...
 compiling CPU.c...
+compiling I2C.c...
 compiling LCD_ILI9341.c...
+lib\HW_Layer\LCD_ILI9341.c(281): warning:  #167-D: argument of type "const uint16_t *" is incompatible with parameter of type "const uint16_t (*)[3]"
+                        x = LCD_printChar(x, y, symbol, fontColor, &calibri_20ptBitmaps[0], &calibri_20ptDescriptors[0][0], DESCRIPTORSBLOCK0_OFFSET);
+lib\HW_Layer\LCD_ILI9341.c: 1 warning, 0 errors
 compiling SPI.c...
-compiling Touch_FT6236.c...
 compiling Timer.c...
+compiling Touch_FT6236.c...
 assembling startup_MDR32F9Qx.s...
 compiling system_MDR32F9Qx.c...
 linking...
-Program Size: Code=7634 RO-data=1598 RW-data=28 ZI-data=2596  
+Program Size: Code=7518 RO-data=2034 RW-data=28 ZI-data=2596  
 FromELF: creating hex file...
-".\Objects\GUI_targetCryoController.axf" - 0 Error(s), 0 Warning(s).
+".\Objects\GUI_targetCryoController.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -52,29 +55,30 @@ Package Vendor: ARM
    * Component: CORE Version: 5.2.0
 
 Package Vendor: Keil
-                http://www.keil.com/pack/Keil.MDR1986BExx.1.5.3.pack
-                Keil.MDR1986BExx.1.5.3
+                http://www.keil.com/pack/Keil.MDR1986BExx.1.5.pack
+                Keil.MDR1986BExx.1.5
                 Milandr MDR1986BExx Series Device Support, Drivers and Examples
    * Component: Startup Version: 1.5
 
 <h2>Collection of Component include folders:</h2>
   .\RTE\Device\MDR1986BE92
   .\RTE\_Target_1
-  C:\Users\somov\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include
-  C:\Users\somov\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\CoreSupport
-  C:\Users\somov\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.5.3\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.5.1\CMSIS\Core\Include
+  C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.5\Config
+  C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.5\Libraries\CMSIS\CM3\CoreSupport
+  C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.5\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc
 
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.2.0
 
    * Component: Keil::Device:Startup:1.5
-      Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\startup_MDR32F9Qx.s
-      Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.c
       Include file:  Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.h
-      Include file:  Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
       Include file:  Config\MDR32F9Qx_config.h
-Build Time Elapsed:  00:00:01
+      Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.c
+      Include file:  Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
+      Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\startup_MDR32F9Qx.s
+Build Time Elapsed:  00:00:06
 </pre>
 </body>
 </html>

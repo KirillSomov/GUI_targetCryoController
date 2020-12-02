@@ -239,6 +239,22 @@ void LCD_drawFilledRectangle(uint16_t x0, uint16_t x1, uint16_t y0, uint16_t y1,
 }
 
 
+uint16_t	LCD_printChar(uint32_t x, uint32_t y, uint16_t symbol, uint16_t fontColor, const uint8_t charArray[], const uint16_t charInfoArray[][3], uint16_t charOffset)
+{		
+	for(uint8_t width = 0; width < charInfoArray[symbol - charOffset][0]; width++)
+	{
+		for(uint8_t height = 0; height < charInfoArray[symbol - charOffset][1]; height++)
+		{			
+			if(charArray[charInfoArray[symbol - charOffset][2] + width] & (1 << height))
+				LCD_drawPixel(x, (y + charInfoArray[symbol - charOffset][1] - height), fontColor);
+		}
+		x++;
+	}
+	
+	return x;
+}
+
+
 // вывод строки
 uint16_t	LCD_printString(uint32_t x, uint32_t y, char* str, uint16_t fontColor)
 {
@@ -258,9 +274,12 @@ uint16_t	LCD_printString(uint32_t x, uint32_t y, char* str, uint16_t fontColor)
 			x = x + 6;
 		}
 
+		
 		// цифры
 		if(symbol >= 0x2E && symbol <= 0x3B)
 		{
+			x = LCD_printChar(x, y, symbol, fontColor, &calibri_20ptBitmaps[0], &calibri_20ptDescriptors[0][0], DESCRIPTORSBLOCK0_OFFSET);
+			/*
 			for(uint8_t width = 0; width < calibri_20ptDescriptorsBlock0[symbol - DESCRIPTORSBLOCK0_OFFSET][0]; width++)
 			{
 				for(uint8_t height = 0; height < 8; height++)
@@ -284,6 +303,7 @@ uint16_t	LCD_printString(uint32_t x, uint32_t y, char* str, uint16_t fontColor)
 				}
 				x++;
 			}
+			*/
 		}
 
 		
