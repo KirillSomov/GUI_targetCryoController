@@ -40,7 +40,7 @@ void	GUI_drawFilledFrame(uint16_t	X0,	uint16_t	X1,			// X-координаты
 void	GUI_intToStr(int32_t num, char *strBuf)
 {
 	uint8_t	charCounter	=	0;
-	char		bufChar				=	0;
+	char		bufChar			=	0;
 	
 	if(num == 0)
 	{
@@ -171,9 +171,7 @@ void	GUI_objHandler(void)
 
 // обработчик нажатия на дисплей
 void	GUI_Handler(void)
-{
-	uint8_t Flag_objectIsDefined = 0;
-	
+{	
 	GUI_getTouchPoint();
 	
 	GUI_objHandler();
@@ -199,14 +197,10 @@ void	GUI_Handler(void)
 							GUI.objList.ObjButtonList[objButNum].timerVal = GUI.objList.ObjButtonList[objButNum].msDelay;
 						}
 					}
-					Flag_objectIsDefined	=	1;
 					GUI.flag_touch				=	0;
-					break;
+					return;
 				}
 			}
-			
-			if(Flag_objectIsDefined == 1)
-				return;	
 		}
 	#endif
 	
@@ -225,14 +219,10 @@ void	GUI_Handler(void)
 					
 					if(GUI.objList.ObjCanvasList[objCanvasNum].action != 0)
 						GUI.objList.ObjCanvasList[objCanvasNum].action();
-					Flag_objectIsDefined	=	1;
 					GUI.flag_touch				=	0;
-					break;
+					return;
 				}
 			}
-			
-			if(Flag_objectIsDefined == 1)
-				return;	
 		}
 	#endif
 }
@@ -302,6 +292,9 @@ void	GUI_labelChangeMainColor(uint8_t labelNum, uint16_t	mainColor)
 											GUI.objList.ObjLabelList[labelNum].border,
 											GUI.objList.ObjLabelList[labelNum].mainColor,
 											GUI.objList.ObjLabelList[labelNum].borderColor);					// закркасить старый цвет
+	
+	if(GUI.objList.ObjLabelList[labelNum].str != 0)
+		GUI_labelChangeText(labelNum, GUI.objList.ObjLabelList[labelNum].str, GUI.objList.ObjLabelList[labelNum].textColor);
 }
 
 
@@ -375,6 +368,9 @@ void	GUI_buttonChangeMainColor(uint8_t buttonNum, uint16_t	mainColor)
 											GUI.objList.ObjButtonList[buttonNum].border,
 											GUI.objList.ObjButtonList[buttonNum].mainColor,
 											GUI.objList.ObjButtonList[buttonNum].borderColor);					// закркасить старый цвет
+	
+	if(GUI.objList.ObjButtonList[buttonNum].str != 0)
+		GUI_buttonChangeText(buttonNum, GUI.objList.ObjButtonList[buttonNum].str, GUI.objList.ObjButtonList[buttonNum].textColor);
 }
 
 

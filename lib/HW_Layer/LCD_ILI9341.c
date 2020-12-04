@@ -278,7 +278,7 @@ uint16_t	LCD_printString(uint32_t x, uint32_t y, char* str, uint16_t fontColor)
 		// цифры
 		if(symbol >= 0x2E && symbol <= 0x3B)
 		{
-			x = LCD_printChar(x, y, symbol, fontColor, &calibri_20ptBitmaps[0], &calibri_20ptDescriptors[0][0], DESCRIPTORSBLOCK0_OFFSET);
+			x = LCD_printChar(x, y, symbol, fontColor, calibri_20ptBitmaps, calibri_20ptDescriptors, DESCRIPTORSBLOCK0_OFFSET);
 			/*
 			for(uint8_t width = 0; width < calibri_20ptDescriptorsBlock0[symbol - DESCRIPTORSBLOCK0_OFFSET][0]; width++)
 			{
@@ -310,6 +310,8 @@ uint16_t	LCD_printString(uint32_t x, uint32_t y, char* str, uint16_t fontColor)
 		// Кириллица
 		if(symbol >= 0xC0)
 		{
+			x = LCD_printChar(x, y, symbol, fontColor, calibri_20ptBitmaps, calibri_20ptDescriptors, DESCRIPTORSBLOCK0_OFFSET);
+			/*
 			for(uint8_t width = 0; width < calibri_20ptDescriptorsBlock1[symbol - DESCRIPTORSBLOCK1_OFFSET][0]; width++)
 			{
 				for(uint8_t height = 0; height < 8; height++)
@@ -333,6 +335,7 @@ uint16_t	LCD_printString(uint32_t x, uint32_t y, char* str, uint16_t fontColor)
 				}
 				x++;
 			}
+			*/
 		}
 		
 		

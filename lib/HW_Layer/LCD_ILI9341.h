@@ -75,7 +75,7 @@
 																				uint16_t color);															// закрасить область
 	uint16_t	LCD_printChar(uint32_t	x,	uint32_t	y,
 													uint16_t	symbol,	uint16_t	fontColor,
-													const	uint8_t		charArray[],	const	uint16_t	charInfoArray[][3],	uint16_t	charOffset);
+													const	uint8_t	charArray[],	const	uint16_t	charInfoArray[][3],	uint16_t	charOffset);
 	uint16_t	LCD_printString(uint32_t x, uint32_t y, char* str, uint16_t fontColor);		//
 
 	

@@ -279,33 +279,16 @@ void	GUI_CTC_init(void)
 									BUTTON_ID2_SWITCHER_DELAY_SEC,
 									BUTTON_ID2_SWITCHER_ACTION_PTR);
 									
-									
-	GUI_drawFilledFrame(BUTTON_ID0_TPLUS_X0+53, BUTTON_ID0_TPLUS_X1-53, BUTTON_ID0_TPLUS_Y0+7, BUTTON_ID0_TPLUS_Y1-7, 0, 0xFFFF, 0xFFFF);
-	GUI_drawFilledFrame(BUTTON_ID0_TPLUS_X0+30, BUTTON_ID0_TPLUS_X1-30, BUTTON_ID0_TPLUS_Y0+30, BUTTON_ID0_TPLUS_Y1-30, 0, 0xFFFF, 0xFFFF);
-	
-	GUI_drawFilledFrame(BUTTON_ID1_TMINUS_X0+30, BUTTON_ID1_TMINUS_X1-30, BUTTON_ID1_TMINUS_Y0+30, BUTTON_ID1_TMINUS_Y1-30, 0, 0xFFFF, 0xFFFF);
 
+	GUI_CTC_buttonTPlusDraw(BUTTON_ID0_TPLUS_MAIN_COLOR);
+	GUI_CTC_buttonTMinusDraw(BUTTON_ID1_TMINUS_MAIN_COLOR);
+	
 	GUI_drawFrame(0, LABEL_ID1_HEADER_SENS_X1, 0, LABEL_ID0_HEADER_Y0+1, 2, 0x0000);
 	GUI_drawFrame(0, LCD_WIDTH-1, 0, LCD_HEIGHT-1, 2, 0x0000);
 }
 
 
-void	GUI_CTC_labelState(uint8_t labelNum,	uint8_t state)
-{
-	if(state == 0)
-	{
-		GUI_labelChangeMainColor(labelNum, LABEL_STATE_MAIN_COLOR_0);
-		GUI_labelChangeText(labelNum, LABEL_STATE_TEXT_0, 0x0000);
-	}
-	else
-	{
-		GUI_labelChangeMainColor(labelNum, LABEL_STATE_MAIN_COLOR_1);
-		GUI_labelChangeText(labelNum, LABEL_STATE_TEXT_1, 0x0000);
-	}
-}
-
-
-void	GUI_CTC_buttonState(void)
+void	GUI_CTC_buttonStateClick(void)
 {
 	if(GUI.objList.ObjButtonList[BUTTON_SWITCHER_ID].state == 0)
 	{
@@ -323,6 +306,63 @@ void	GUI_CTC_buttonState(void)
 	}
 }
 
+void	GUI_CTC_labelState(uint8_t labelNum,	uint8_t state)
+{
+	if(state == 0)
+	{
+		GUI_labelChangeMainColor(labelNum, LABEL_STATE_MAIN_COLOR_0);
+		GUI_labelChangeText(labelNum, LABEL_STATE_TEXT_0, 0x0000);
+	}
+	else
+	{
+		GUI_labelChangeMainColor(labelNum, LABEL_STATE_MAIN_COLOR_1);
+		GUI_labelChangeText(labelNum, LABEL_STATE_TEXT_1, 0x0000);
+	}
+}
+
+
+void	GUI_CTC_buttonTPlusDraw(uint16_t mainColor)
+{
+	GUI_buttonChangeMainColor(BUTTON_TPLUS_ID, mainColor);
+	
+	GUI_drawFilledFrame(BUTTON_ID0_TPLUS_X0+53, BUTTON_ID0_TPLUS_X1-53, BUTTON_ID0_TPLUS_Y0+7, BUTTON_ID0_TPLUS_Y1-7, 0, 0xFFFF, 0xFFFF);
+	GUI_drawFilledFrame(BUTTON_ID0_TPLUS_X0+30, BUTTON_ID0_TPLUS_X1-30, BUTTON_ID0_TPLUS_Y0+30, BUTTON_ID0_TPLUS_Y1-30, 0, 0xFFFF, 0xFFFF);
+}
+
+void	GUI_CTC_buttonTPlusClick(void)
+{
+	GUI_CTC_buttonTPlusDraw(BUTTON_TPLUS_CLICK_COLOR);
+	tempSetNum++;
+	GUI_CTC_labelTSetNum(LABEL_TSET_NUM_ID, &strBufNum[0], tempSetNum);
+}
+
+void	GUI_CTC_buttonTPlusReturnColor(void)
+{
+	if(GUI.objList.ObjButtonList[BUTTON_TPLUS_ID].flag_buttonWasClicked == 0 && GUI.objList.ObjButtonList[BUTTON_TPLUS_ID].mainColor != BUTTON_ID0_TPLUS_MAIN_COLOR)
+		GUI_CTC_buttonTPlusDraw(BUTTON_ID0_TPLUS_MAIN_COLOR);
+}
+
+
+void	GUI_CTC_buttonTMinusDraw(uint16_t mainColor)
+{
+	GUI_buttonChangeMainColor(BUTTON_TPLUS_ID, mainColor);
+	
+	GUI_drawFilledFrame(BUTTON_ID1_TMINUS_X0+30, BUTTON_ID1_TMINUS_X1-30, BUTTON_ID1_TMINUS_Y0+30, BUTTON_ID1_TMINUS_Y1-30, 0, 0xFFFF, 0xFFFF);
+}
+
+void	GUI_CTC_buttonTMinusClick(void)
+{
+	GUI_CTC_buttonTMinusDraw(BUTTON_TMINUS_CLICK_COLOR);
+	tempSetNum--;
+	GUI_CTC_labelTSetNum(LABEL_TSET_NUM_ID, &strBufNum[0], tempSetNum);
+}
+
+void	GUI_CTC_buttonTMinusReturnColor(void)
+{
+	if(GUI.objList.ObjButtonList[BUTTON_TMINUS_ID].flag_buttonWasClicked == 0 && GUI.objList.ObjButtonList[BUTTON_TMINUS_ID].mainColor != BUTTON_ID1_TMINUS_MAIN_COLOR)
+		GUI_CTC_buttonTMinusDraw(BUTTON_ID1_TMINUS_MAIN_COLOR);
+}
+
 
 void	GUI_CTC_labelTSetNum(uint8_t labelNum, char *str, int32_t setNum)
 {
@@ -330,16 +370,9 @@ void	GUI_CTC_labelTSetNum(uint8_t labelNum, char *str, int32_t setNum)
 	GUI_labelChangeText(labelNum, str, 0x0000);
 }
 
-void	GUI_CTC_buttonTPlus(void)
-{
-	GUI_buttonChangeMainColor(BUTTON_TPLUS_ID, BUTTON_TPLUS_CLICK_COLOR);
-	tempSetNum++;
-	GUI_CTC_labelTSetNum(LABEL_TSET_NUM_ID, &strBufNum[0], tempSetNum);
-}
 
-void	GUI_CTC_buttonTMinus(void)
+void	GUI_CTC_objAction(void)
 {
-	GUI_buttonChangeMainColor(BUTTON_TMINUS_ID, BUTTON_TMINUS_CLICK_COLOR);
-	tempSetNum--;
-	GUI_CTC_labelTSetNum(LABEL_TSET_NUM_ID, &strBufNum[0], tempSetNum);
+	GUI_CTC_buttonTMinusReturnColor();
+	GUI_CTC_buttonTMinusReturnColor();
 }

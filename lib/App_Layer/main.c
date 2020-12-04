@@ -78,12 +78,6 @@ int main(void)
 //		delay_ms(250);
 		
 		
-		if(!FT6236_checkInt())
-		{
-			
-			
-			// обработка нажатия
-			GUI_Handler();
-		}
+		GUI_Handler();
 	}	
 }

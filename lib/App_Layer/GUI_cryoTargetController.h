@@ -337,7 +337,7 @@
 	#define	BUTTON_ID0_TPLUS_TEXT_MARGIN_Y					0
 	#define	BUTTON_ID0_TPLUS_STATE									0
 	#define	BUTTON_ID0_TPLUS_DELAY_SEC							100
-	#define	BUTTON_ID0_TPLUS_ACTION_PTR							GUI_CTC_buttonTPlus
+	#define	BUTTON_ID0_TPLUS_ACTION_PTR							GUI_CTC_buttonTPlusClick
 
 	#define	BUTTON_TMINUS_ID												1
 	#define	BUTTON_TMINUS_CLICK_COLOR								0xFF20
@@ -354,7 +354,7 @@
 	#define	BUTTON_ID1_TMINUS_TEXT_MARGIN_Y					0
 	#define	BUTTON_ID1_TMINUS_STATE									0
 	#define	BUTTON_ID1_TMINUS_DELAY_SEC							100
-	#define	BUTTON_ID1_TMINUS_ACTION_PTR						GUI_CTC_buttonTMinus
+	#define	BUTTON_ID1_TMINUS_ACTION_PTR						GUI_CTC_buttonTMinusClick
 
 	#define	BUTTON_SWITCHER_ID											2
 	#define	BUTTON_SWITCHER_CLICK_COLOR							0xFF20
@@ -376,7 +376,7 @@
 	#define	BUTTON_ID2_SWITCHER_TEXT_MARGIN_Y				18
 	#define	BUTTON_ID2_SWITCHER_STATE								0
 	#define	BUTTON_ID2_SWITCHER_DELAY_SEC						100
-	#define	BUTTON_ID2_SWITCHER_ACTION_PTR					GUI_CTC_buttonState
+	#define	BUTTON_ID2_SWITCHER_ACTION_PTR					GUI_CTC_buttonStateClick
 	
 	
 	extern char strBufNum[NUM_STR_LEN];
@@ -384,11 +384,21 @@
 	
 	// прототипы функций
 	void	GUI_CTC_init(void);
-	void	GUI_CTC_labelState(uint8_t labelNum,	uint8_t state);
-	void	GUI_CTC_buttonState(void);
-	void	GUI_CTC_labelTSetNum(uint8_t labelNum, char *str, int32_t setNum);
-	void	GUI_CTC_buttonTPlus(void);
-	void	GUI_CTC_buttonTMinus(void);
 	
+	void	GUI_CTC_buttonStateClick(void);
+	void	GUI_CTC_labelState(uint8_t labelNum,	uint8_t state);
+	
+	void	GUI_CTC_buttonTPlusDraw(uint16_t mainColor);
+	void	GUI_CTC_buttonTPlusClick(void);
+	void	GUI_CTC_buttonTPlusReturnColor(void);
+	
+	void	GUI_CTC_buttonTMinusDraw(uint16_t mainColor);
+	void	GUI_CTC_buttonTMinusClick(void);
+	void	GUI_CTC_buttonTMinusReturnColor(void);
+	
+	void	GUI_CTC_labelTSetNum(uint8_t labelNum, char *str, int32_t setNum);
+	
+	void	GUI_CTC_objAction(void);
+		
 	
 #endif
