@@ -140,12 +140,6 @@
 														uint16_t	border,							// ширина границ
 														uint16_t	mainColor,					// основной цвет
 														uint16_t	borderColor);				// цвет гнраниц
-	void	GUI_drawPicture(uint16_t	X0,											// X-координаты объекта	// отрисовка картинки
-												uint16_t	Y0,											// Y-координаты объекта
-												uint16_t	border,									// ширина границ
-												uint16_t	pictureColor,						// основной цвет
-												uint16_t	borderColor,						// цвет границ
-												uint16_t	*picture);							// указатель на картинку
 	void	GUI_intToStr(int32_t num, char *strBuf);					//
 	void	GUI_floatToStr(float num, char *strBuf);					//
 

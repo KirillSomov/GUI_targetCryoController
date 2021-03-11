@@ -73,7 +73,7 @@ uint8_t	FT6236_checkInt(void)
 {
 	uint8_t flagInt = 0;
 	
-	flagInt = (uint8_t)((FT6236_INT_PORT->RXTX & (1 << FT6236_INT_PIN)) >> FT6236_INT_PIN);
+	flagInt = !((uint8_t)((FT6236_INT_PORT->RXTX & (1 << FT6236_INT_PIN)) >> FT6236_INT_PIN));
 	
 	return flagInt;
 }

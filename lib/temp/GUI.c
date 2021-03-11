@@ -36,17 +36,6 @@ void	GUI_drawFilledFrame(uint16_t	X0,	uint16_t	X1,			// X-координаты
 	}
 }
 
-// отрисовка картинки
-void	GUI_drawPicture(uint16_t	X0,											// X-координаты объекта
-											uint16_t	Y0,											// Y-координаты объекта
-											uint16_t	border,									// ширина границ
-											uint16_t	pictureColor,						// основной цвет
-											uint16_t	borderColor,						// цвет границ
-											uint16_t	*picture)								// указатель на картинку
-{
-	;
-}
-
 // 
 void	GUI_intToStr(int32_t num, char *strBuf)
 {
@@ -157,9 +146,7 @@ void	GUI_objectListReset(void)
 // получить координаты нажатия
 void	GUI_getTouchPoint(void)
 {
-	//GUI.flag_touch = FT6236_checkInt();
-	
-	GUI.flag_touch = 1;
+	GUI.flag_touch = FT6236_checkInt();
 	
 	if(GUI.flag_touch)
 	{
@@ -185,7 +172,7 @@ void	GUI_objHandler(void)
 // обработчик нажатия на дисплей
 void	GUI_Handler(void)
 {	
-	//GUI_getTouchPoint();
+	GUI_getTouchPoint();
 	
 	GUI_objHandler();
 	

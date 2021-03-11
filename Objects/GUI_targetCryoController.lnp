@@ -2,6 +2,7 @@
 ".\objects\gui_cryotargetcontroller.o"
 ".\objects\main.o"
 ".\objects\gui.o"
+".\objects\font.o"
 ".\objects\cpu.o"
 ".\objects\i2c.o"
 ".\objects\lcd_ili9341.o"

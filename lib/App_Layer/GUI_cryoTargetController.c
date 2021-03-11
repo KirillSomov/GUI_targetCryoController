@@ -6,9 +6,34 @@ int32_t tempSetNum = 0;
 char strBufNum[NUM_STR_LEN];
 
 
-void	GUI_CTC_init(void)
+void	GUI_CTC_pageLogoInit(void)
+{
+	// белый фон LCD
+	LCD_fill(0xBDD7);
+	
+	LCD_printString2(96-1, 295-1, "ККВМ-10", 0x0000, &calibri_14ptFontInfo);
+	LCD_printString2(8-1, 279-1, "Криогенный термоконтроллер", 0x0000, &calibri_14ptFontInfo);
+	LCD_printString2(40-1, 262-1, "водородной мишени", 0x0000, &calibri_14ptFontInfo);
+
+	LCD_drawPicture(20-1, 100, 0x2339, logoJINRBitmaps, logoJINRDescriptors);	
+
+	LCD_printString2(65-1, 80-1, "JOINT INSTITUTE", 0x2339, &calibri_14ptFontInfo);
+	LCD_printString2(25-1, 60-1, "FOR NUCLEAR RESEARCH", 0x2339, &calibri_14ptFontInfo);
+	
+	LCD_drawPicture(97-1, 5-1, 0x0000, logoDIALTEK_blackBitmaps, logoDIALTEK_blackDescriptors);
+	LCD_drawPicture(93-1, 13-1, 0x25B0, logoDIALTEK_greenBitmaps, logoDIALTEK_greenDescriptors);
+
+	LCD_printString2(200-1, 5-1, "v1.0", 0x0000, &calibri_14ptFontInfo);
+}
+
+void	GUI_CTC_pageMainInit(void)
 {
 	GUI_objectListReset();
+	
+	GUI_objSetHandlerFunc(&GUI_CTC_objAction);
+	
+	// белый фон LCD
+	LCD_fill(0xBDD7);
 	
 	GUI_drawFilledFrame(0, LCD_WIDTH-1, 0, LCD_HEIGHT-1, 0, 0xFFFF, 0x0000);
 	GUI_createLabel(LABEL_ID0_HEADER_X0,	LABEL_ID0_HEADER_X1,
@@ -278,7 +303,8 @@ void	GUI_CTC_init(void)
 									BUTTON_ID2_SWITCHER_STATE,
 									BUTTON_ID2_SWITCHER_DELAY_SEC,
 									BUTTON_ID2_SWITCHER_ACTION_PTR);
-									
+	
+	LCD_printChar(GUI.objList.ObjLabelList[LABEL_HEADER_ID].textLenght, LABEL_ID0_HEADER_Y0-2, '2', 0xFFFF, impact_18ptBitmapsNum, impact_18ptDescriptorsNum, DESCRIPTORSBLOCK0_OFFSET);
 
 	GUI_CTC_buttonTPlusDraw(BUTTON_ID0_TPLUS_MAIN_COLOR);
 	GUI_CTC_buttonTMinusDraw(BUTTON_ID1_TMINUS_MAIN_COLOR);
@@ -325,8 +351,8 @@ void	GUI_CTC_buttonTPlusDraw(uint16_t mainColor)
 {
 	GUI_buttonChangeMainColor(BUTTON_TPLUS_ID, mainColor);
 	
-	GUI_drawFilledFrame(BUTTON_ID0_TPLUS_X0+53, BUTTON_ID0_TPLUS_X1-53, BUTTON_ID0_TPLUS_Y0+7, BUTTON_ID0_TPLUS_Y1-7, 0, 0xFFFF, 0xFFFF);
-	GUI_drawFilledFrame(BUTTON_ID0_TPLUS_X0+30, BUTTON_ID0_TPLUS_X1-30, BUTTON_ID0_TPLUS_Y0+30, BUTTON_ID0_TPLUS_Y1-30, 0, 0xFFFF, 0xFFFF);
+	GUI_drawFilledFrame(BUTTON_ID0_TPLUS_X0+47, BUTTON_ID0_TPLUS_X1-47, BUTTON_ID0_TPLUS_Y0+5, BUTTON_ID0_TPLUS_Y1-5, 0, 0xFFFF, 0xFFFF);
+	GUI_drawFilledFrame(BUTTON_ID0_TPLUS_X0+30, BUTTON_ID0_TPLUS_X1-30, BUTTON_ID0_TPLUS_Y0+22, BUTTON_ID0_TPLUS_Y1-22, 0, 0xFFFF, 0xFFFF);
 }
 
 void	GUI_CTC_buttonTPlusClick(void)
@@ -345,9 +371,9 @@ void	GUI_CTC_buttonTPlusReturnColor(void)
 
 void	GUI_CTC_buttonTMinusDraw(uint16_t mainColor)
 {
-	GUI_buttonChangeMainColor(BUTTON_TPLUS_ID, mainColor);
+	GUI_buttonChangeMainColor(BUTTON_TMINUS_ID, mainColor);
 	
-	GUI_drawFilledFrame(BUTTON_ID1_TMINUS_X0+30, BUTTON_ID1_TMINUS_X1-30, BUTTON_ID1_TMINUS_Y0+30, BUTTON_ID1_TMINUS_Y1-30, 0, 0xFFFF, 0xFFFF);
+	GUI_drawFilledFrame(BUTTON_ID1_TMINUS_X0+30, BUTTON_ID1_TMINUS_X1-30, BUTTON_ID1_TMINUS_Y0+22, BUTTON_ID1_TMINUS_Y1-22, 0, 0xFFFF, 0xFFFF);
 }
 
 void	GUI_CTC_buttonTMinusClick(void)
@@ -373,6 +399,6 @@ void	GUI_CTC_labelTSetNum(uint8_t labelNum, char *str, int32_t setNum)
 
 void	GUI_CTC_objAction(void)
 {
-	GUI_CTC_buttonTMinusReturnColor();
+	GUI_CTC_buttonTPlusReturnColor();
 	GUI_CTC_buttonTMinusReturnColor();
 }

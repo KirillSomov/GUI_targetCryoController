@@ -238,34 +238,6 @@ void LCD_drawFilledRectangle(uint16_t x0, uint16_t x1, uint16_t y0, uint16_t y1,
 	}
 }
 
-// отрисовка картинки
-void	LCD_drawPicture(uint32_t	x,	uint32_t	y,
-											uint16_t	pictureColor,
-											const	uint8_t	pictureArray[],	const	uint16_t	pictureInfoArray[][2])
-{
-	uint8_t	i = 0;
-	uint8_t	heightInBytes = 0;
-	
-	if(pictureInfoArray[0][1] % 8 != 0)
-		heightInBytes = pictureInfoArray[0][1] / 8 + 1;
-	else
-		heightInBytes = pictureInfoArray[0][1] / 8;
-	
-	for(uint8_t width = 0; width < pictureInfoArray[0][0]; width++)
-	{
-		i = 0;
-		for(uint8_t height = heightInBytes; height > 0; height--)
-		{
-			for(uint8_t byte = 0; byte < 8; byte++)
-			{
-				if(pictureArray[width + i*pictureInfoArray[0][0]] & (1 << byte))
-					LCD_drawPixel(x, (y + height*8 - byte), pictureColor);
-			}
-			i++;
-		}
-		x++;
-	}
-}
 
 uint16_t	LCD_printChar(uint32_t x, uint32_t y, uint16_t symbol, uint16_t fontColor, const uint8_t charArray[], const uint16_t charInfoArray[][3], uint16_t charOffset)
 {	
@@ -323,81 +295,6 @@ uint16_t	LCD_printString(uint32_t x, uint32_t y, char* str, uint16_t fontColor)
 			x = LCD_printChar(x, y, symbol, fontColor, impact_18ptBitmaps, impact_18ptDescriptors, DESCRIPTORSBLOCK1_OFFSET);
 		}
 		
-		
-		if(str && symbol != ' ')
-			x = x + 1;
-	}
-	
-	return x;
-}
-
-
-
-
-
-uint16_t	LCD_printChar2(uint32_t x, uint32_t y, uint16_t symbol, uint16_t fontColor, const struct fontInfo *fontInfoStruct)
-{	
-	uint8_t		i							=	0;
-	uint16_t	symbolWidth		=	0;
-	uint16_t	symbolHeight	=	0;
-	uint16_t	symbolOffset	=	0;
-	uint8_t		symbolByte		=	0;
-	
-	if(symbol >= fontInfoStruct->startChar && symbol <= fontInfoStruct->endChar)
-	{
-		for(uint16_t fontDescptrBlockNum = 0; fontDescptrBlockNum < fontInfoStruct->CharBlockArrayLength; fontDescptrBlockNum++)
-		{
-			if(symbol >= fontInfoStruct->fontCharInfoLookupArray[fontDescptrBlockNum].startChar && symbol <= fontInfoStruct->fontCharInfoLookupArray[fontDescptrBlockNum].endChar)
-			{
-				symbolOffset	=	fontInfoStruct->fontCharInfoLookupArray[fontDescptrBlockNum].startChar;
-				symbolWidth		=	fontInfoStruct->fontCharInfoLookupArray[fontDescptrBlockNum].descriptorsBlockArray[symbol - symbolOffset][0];
-				symbolHeight	=	fontInfoStruct->fontCharInfoLookupArray[fontDescptrBlockNum].descriptorsBlockArray[symbol - symbolOffset][1];
-				
-				for(uint8_t width = 0; width < symbolWidth; width++)
-				{
-					i = 0;
-					for(uint8_t height = symbolHeight; height > 0; height--)
-					{
-						symbolByte = fontInfoStruct->charBitmapArray[fontInfoStruct->fontCharInfoLookupArray[fontDescptrBlockNum].descriptorsBlockArray[symbol - symbolOffset][2] + width + i*symbolWidth];
-						for(uint8_t byte = 0; byte < 8; byte++)
-						{
-							if(symbolByte & (1 << byte))
-								LCD_drawPixel(x, (y + height*8 - byte), fontColor);
-						}
-						i++;
-					}
-					x++;
-				}
-				
-				return x;
-			}
-		}
-	}
-	
-	return x;
-}
-
-
-// вывод строки
-uint16_t	LCD_printString2(uint32_t x, uint32_t y, char* str, uint16_t fontColor, const struct fontInfo *fontInfoStruct)
-{
-//	x--;
-//	y--;
-	
-	uint16_t symbol = 0;	// код ascii символа
-	
-	//y = (LCD_HEIGHT-1) - y;
-	while(*str)
-	{
-		symbol = *str++;
-		
-		// пробел
-		if(symbol == ' ')
-		{
-			x = x + 6;
-		}
-		
-		x = LCD_printChar2(x, y, symbol, fontColor, fontInfoStruct);		
 		
 		if(str && symbol != ' ')
 			x = x + 1;
