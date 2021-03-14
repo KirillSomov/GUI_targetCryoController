@@ -157,9 +157,9 @@ void	GUI_objectListReset(void)
 // получить координаты нажатия
 void	GUI_getTouchPoint(void)
 {
-	//GUI.flag_touch = FT6236_checkInt();
+	GUI.flag_touch = FT6236_checkInt();
 	
-	GUI.flag_touch = 1;
+	//GUI.flag_touch = 1;
 	
 	if(GUI.flag_touch)
 	{
@@ -185,7 +185,7 @@ void	GUI_objHandler(void)
 // обработчик нажатия на дисплей
 void	GUI_Handler(void)
 {	
-	//GUI_getTouchPoint();
+	GUI_getTouchPoint();
 	
 	GUI_objHandler();
 	
@@ -249,6 +249,7 @@ void	GUI_createLabel(uint16_t	X0,	uint16_t	X1,			// X-координаты	// с
 											uint16_t	borderColor,					// цвет границ
 											char			*str,									// текст
 											uint16_t	textColor,						// цвет текста
+					const struct fontInfo *fontInfoStruct,			// шрифт
 											uint16_t	textMarginX,					// отступ текста по X
 											uint16_t	textMarginY,					// отступ текста по Y
 											void			(*action)(void))			// функция привязаная к лейблу
@@ -257,19 +258,20 @@ void	GUI_createLabel(uint16_t	X0,	uint16_t	X1,			// X-координаты	// с
 	GUI.objList.ObjLabelList[GUI.objList.ObjLabelNum].X1	=	X1;
 	GUI.objList.ObjLabelList[GUI.objList.ObjLabelNum].Y0	=	Y0;
 	GUI.objList.ObjLabelList[GUI.objList.ObjLabelNum].Y1	=	Y1;
-	GUI.objList.ObjLabelList[GUI.objList.ObjLabelNum].border				=	border;
-	GUI.objList.ObjLabelList[GUI.objList.ObjLabelNum].mainColor			=	mainColor;
-	GUI.objList.ObjLabelList[GUI.objList.ObjLabelNum].borderColor		=	borderColor;
-	GUI.objList.ObjLabelList[GUI.objList.ObjLabelNum].str						=	str;
-	GUI.objList.ObjLabelList[GUI.objList.ObjLabelNum].textColor			=	textColor;
-	GUI.objList.ObjLabelList[GUI.objList.ObjLabelNum].textMarginX		=	textMarginX;
-	GUI.objList.ObjLabelList[GUI.objList.ObjLabelNum].textMarginY		=	textMarginY;
-	GUI.objList.ObjLabelList[GUI.objList.ObjLabelNum].action				=	action;
+	GUI.objList.ObjLabelList[GUI.objList.ObjLabelNum].border					=	border;
+	GUI.objList.ObjLabelList[GUI.objList.ObjLabelNum].mainColor				=	mainColor;
+	GUI.objList.ObjLabelList[GUI.objList.ObjLabelNum].borderColor			=	borderColor;
+	GUI.objList.ObjLabelList[GUI.objList.ObjLabelNum].str							=	str;
+	GUI.objList.ObjLabelList[GUI.objList.ObjLabelNum].textColor				=	textColor;
+	GUI.objList.ObjLabelList[GUI.objList.ObjLabelNum].fontInfoStruct	=	fontInfoStruct;
+	GUI.objList.ObjLabelList[GUI.objList.ObjLabelNum].textMarginX			=	textMarginX;
+	GUI.objList.ObjLabelList[GUI.objList.ObjLabelNum].textMarginY			=	textMarginY;
+	GUI.objList.ObjLabelList[GUI.objList.ObjLabelNum].action					=	action;
 	
 	GUI_drawFilledFrame(X0, X1, Y0, Y1, border, mainColor, borderColor);		// отрисовка лейбла
 	
 	if(str != 0)
-		GUI.objList.ObjLabelList[GUI.objList.ObjLabelNum].textLenght = LCD_printString(X0+textMarginX, Y0+textMarginY, str, textColor);
+		GUI.objList.ObjLabelList[GUI.objList.ObjLabelNum].textLenght = LCD_printString(X0+textMarginX, Y0+textMarginY, str, textColor, fontInfoStruct);
 	else
 		GUI.objList.ObjLabelList[GUI.objList.ObjLabelNum].textLenght = 0;
 	
@@ -277,9 +279,11 @@ void	GUI_createLabel(uint16_t	X0,	uint16_t	X1,			// X-координаты	// с
 }
 
 // сменить текст лейбла
-void	GUI_labelChangeText(uint8_t labelNum, char *str, uint16_t	textColor)
+void	GUI_labelChangeText(uint8_t labelNum, char *str, uint16_t	textColor, const struct fontInfo *fontInfoStruct)
 {
-	GUI.objList.ObjLabelList[labelNum].str = str;
+	GUI.objList.ObjLabelList[labelNum].str 						= str;
+	GUI.objList.ObjLabelList[labelNum].textColor			=	textColor;
+	GUI.objList.ObjLabelList[labelNum].fontInfoStruct	=	fontInfoStruct;
 	
 	GUI_drawFilledFrame(GUI.objList.ObjLabelList[labelNum].X0+GUI.objList.ObjLabelList[labelNum].textMarginX,
 											GUI.objList.ObjLabelList[labelNum].textLenght,
@@ -292,7 +296,7 @@ void	GUI_labelChangeText(uint8_t labelNum, char *str, uint16_t	textColor)
 	if(str != 0)
 		GUI.objList.ObjLabelList[labelNum].textLenght = LCD_printString(GUI.objList.ObjLabelList[labelNum].X0+GUI.objList.ObjLabelList[labelNum].textMarginX,
 																																GUI.objList.ObjLabelList[labelNum].Y0+GUI.objList.ObjLabelList[labelNum].textMarginY,
-																																GUI.objList.ObjLabelList[labelNum].str, textColor);
+																																str, textColor, fontInfoStruct);
 }
 
 // сменить цвет лейбла
@@ -309,7 +313,7 @@ void	GUI_labelChangeMainColor(uint8_t labelNum, uint16_t	mainColor)
 											GUI.objList.ObjLabelList[labelNum].borderColor);					// закркасить старый цвет
 	
 	if(GUI.objList.ObjLabelList[labelNum].str != 0)
-		GUI_labelChangeText(labelNum, GUI.objList.ObjLabelList[labelNum].str, GUI.objList.ObjLabelList[labelNum].textColor);
+		GUI_labelChangeText(labelNum, GUI.objList.ObjLabelList[labelNum].str, GUI.objList.ObjLabelList[labelNum].textColor, GUI.objList.ObjLabelList[labelNum].fontInfoStruct);
 }
 
 
@@ -321,6 +325,7 @@ void	GUI_createButton(uint16_t	X0,	uint16_t	X1,			// X-координаты кн
 											uint16_t	borderColor,					// цвет границ
 											char			*str,									// текст
 											uint16_t	textColor,						// цвет текста
+					const struct fontInfo *fontInfoStruct,			// шрифт
 											uint16_t	textMarginX,					// отступ текста по X
 											uint16_t	textMarginY,					// отступ текста по Y											
 											uint8_t		state,
@@ -336,6 +341,7 @@ void	GUI_createButton(uint16_t	X0,	uint16_t	X1,			// X-координаты кн
 	GUI.objList.ObjButtonList[GUI.objList.ObjButtonNum].borderColor					=	borderColor;
 	GUI.objList.ObjButtonList[GUI.objList.ObjButtonNum].str									=	str;
 	GUI.objList.ObjButtonList[GUI.objList.ObjButtonNum].textColor						=	textColor;
+	GUI.objList.ObjButtonList[GUI.objList.ObjButtonNum].fontInfoStruct			=	fontInfoStruct;
 	GUI.objList.ObjButtonList[GUI.objList.ObjButtonNum].textMarginX					=	textMarginX;
 	GUI.objList.ObjButtonList[GUI.objList.ObjButtonNum].textMarginY					=	textMarginY;
 	GUI.objList.ObjButtonList[GUI.objList.ObjButtonNum].state								=	state;
@@ -347,7 +353,7 @@ void	GUI_createButton(uint16_t	X0,	uint16_t	X1,			// X-координаты кн
 	GUI_drawFilledFrame(X0, X1, Y0, Y1, border, mainColor, borderColor);		// отрисовка кнопки
 	
 	if(str != 0)
-		GUI.objList.ObjButtonList[GUI.objList.ObjButtonNum].textLenght = LCD_printString(X0+textMarginX, Y0+textMarginY, str, textColor);
+		GUI.objList.ObjButtonList[GUI.objList.ObjButtonNum].textLenght = LCD_printString(X0+textMarginX, Y0+textMarginY, str, textColor, fontInfoStruct);
 	else
 		GUI.objList.ObjButtonList[GUI.objList.ObjButtonNum].textLenght = 0;
 	
@@ -355,9 +361,11 @@ void	GUI_createButton(uint16_t	X0,	uint16_t	X1,			// X-координаты кн
 }
 
 // сменить текст кнопки
-void	GUI_buttonChangeText(uint8_t buttonNum, char *str, uint16_t	textColor)
+void	GUI_buttonChangeText(uint8_t buttonNum, char *str, uint16_t	textColor, const struct fontInfo *fontInfoStruct)
 {
-	GUI.objList.ObjButtonList[buttonNum].str = str;
+	GUI.objList.ObjButtonList[buttonNum].str 						= str;
+	GUI.objList.ObjButtonList[buttonNum].textColor			=	textColor;
+	GUI.objList.ObjButtonList[buttonNum].fontInfoStruct	=	fontInfoStruct;
 	
 	GUI_drawFilledFrame(GUI.objList.ObjButtonList[buttonNum].X0+GUI.objList.ObjButtonList[buttonNum].textMarginX,
 											GUI.objList.ObjButtonList[buttonNum].textLenght,
@@ -370,7 +378,7 @@ void	GUI_buttonChangeText(uint8_t buttonNum, char *str, uint16_t	textColor)
 	if(str != 0)
 		GUI.objList.ObjButtonList[buttonNum].textLenght = LCD_printString(GUI.objList.ObjButtonList[buttonNum].X0+GUI.objList.ObjButtonList[buttonNum].textMarginX,
 																																GUI.objList.ObjButtonList[buttonNum].Y0+GUI.objList.ObjButtonList[buttonNum].textMarginY,
-																																GUI.objList.ObjButtonList[buttonNum].str, textColor);
+																																str, textColor, fontInfoStruct);
 }
 
 // сменить цвет кнопки
@@ -387,7 +395,7 @@ void	GUI_buttonChangeMainColor(uint8_t buttonNum, uint16_t	mainColor)
 											GUI.objList.ObjButtonList[buttonNum].borderColor);					// закркасить старый цвет
 	
 	if(GUI.objList.ObjButtonList[buttonNum].str != 0)
-		GUI_buttonChangeText(buttonNum, GUI.objList.ObjButtonList[buttonNum].str, GUI.objList.ObjButtonList[buttonNum].textColor);
+		GUI_buttonChangeText(buttonNum, GUI.objList.ObjButtonList[buttonNum].str, GUI.objList.ObjButtonList[buttonNum].textColor, GUI.objList.ObjButtonList[buttonNum].fontInfoStruct);
 }
 
 

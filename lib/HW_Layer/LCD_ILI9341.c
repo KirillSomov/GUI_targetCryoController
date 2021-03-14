@@ -192,7 +192,6 @@ void LCD_fill(uint16_t color)
 	}
 }
 
-
 // отрисовка пикселя
 void LCD_drawPixel(uint16_t x, uint16_t y, uint16_t color)
 {
@@ -206,7 +205,6 @@ void LCD_drawPixel(uint16_t x, uint16_t y, uint16_t color)
   LCD_sendData(color >> 8);
   LCD_sendData(color & 0xFF);
 }
-
 
 // закрасить область
 void LCD_drawFilledRectangle(uint16_t x0, uint16_t x1, uint16_t y0, uint16_t y1, uint16_t color)
@@ -238,27 +236,28 @@ void LCD_drawFilledRectangle(uint16_t x0, uint16_t x1, uint16_t y0, uint16_t y1,
 	}
 }
 
+
 // отрисовка картинки
 void	LCD_drawPicture(uint32_t	x,	uint32_t	y,
 											uint16_t	pictureColor,
-											const	uint8_t	pictureArray[],	const	uint16_t	pictureInfoArray[][2])
+											const	struct pictureInfo *pictureInfoStruct)
 {
 	uint8_t	i = 0;
 	uint8_t	heightInBytes = 0;
 	
-	if(pictureInfoArray[0][1] % 8 != 0)
-		heightInBytes = pictureInfoArray[0][1] / 8 + 1;
+	if(pictureInfoStruct->pictureDescriptorArray[0][1] % 8 != 0)
+		heightInBytes = pictureInfoStruct->pictureDescriptorArray[0][1] / 8 + 1;
 	else
-		heightInBytes = pictureInfoArray[0][1] / 8;
+		heightInBytes = pictureInfoStruct->pictureDescriptorArray[0][1] / 8;
 	
-	for(uint8_t width = 0; width < pictureInfoArray[0][0]; width++)
+	for(uint8_t width = 0; width < pictureInfoStruct->pictureDescriptorArray[0][0]; width++)
 	{
 		i = 0;
 		for(uint8_t height = heightInBytes; height > 0; height--)
 		{
 			for(uint8_t byte = 0; byte < 8; byte++)
 			{
-				if(pictureArray[width + i*pictureInfoArray[0][0]] & (1 << byte))
+				if(pictureInfoStruct->pictureBitmapArray[width + i*pictureInfoStruct->pictureDescriptorArray[0][0]] & (1 << byte))
 					LCD_drawPixel(x, (y + height*8 - byte), pictureColor);
 			}
 			i++;
@@ -267,75 +266,8 @@ void	LCD_drawPicture(uint32_t	x,	uint32_t	y,
 	}
 }
 
-uint16_t	LCD_printChar(uint32_t x, uint32_t y, uint16_t symbol, uint16_t fontColor, const uint8_t charArray[], const uint16_t charInfoArray[][3], uint16_t charOffset)
-{	
-	uint8_t	i = 0;
-	
-	for(uint8_t width = 0; width < charInfoArray[symbol - charOffset][0]; width++)
-	{
-		i = 0;
-		for(uint8_t height = charInfoArray[symbol - charOffset][1]; height > 0; height--)
-		{
-			for(uint8_t byte = 0; byte < 8; byte++)
-			{
-				if(charArray[charInfoArray[symbol - charOffset][2] + width + i*charInfoArray[symbol - charOffset][0]] & (1 << byte))
-					LCD_drawPixel(x, (y + height*8 - byte), fontColor);
-			}
-			i++;
-		}
-		x++;
-	}
-	
-	return x;
-}
 
-
-// вывод строки
-uint16_t	LCD_printString(uint32_t x, uint32_t y, char* str, uint16_t fontColor)
-{
-//	x--;
-//	y--;
-	
-	uint16_t symbol = 0;	// код ascii символа
-	
-	//y = (LCD_HEIGHT-1) - y;
-	while(*str)
-	{
-		symbol = *str++;
-		
-		// пробел
-		if(symbol == ' ')
-		{
-			x = x + 6;
-		}
-
-		
-		// цифры
-		if(symbol >= 0x2E && symbol <= 0x3B)
-		{
-			x = LCD_printChar(x, y, symbol, fontColor, impact_18ptBitmapsNum, impact_18ptDescriptorsNum, DESCRIPTORSBLOCK0_OFFSET);
-		}
-
-		
-		// Кириллица
-		if(symbol >= 0xC0)
-		{
-			x = LCD_printChar(x, y, symbol, fontColor, impact_18ptBitmaps, impact_18ptDescriptors, DESCRIPTORSBLOCK1_OFFSET);
-		}
-		
-		
-		if(str && symbol != ' ')
-			x = x + 1;
-	}
-	
-	return x;
-}
-
-
-
-
-
-uint16_t	LCD_printChar2(uint32_t x, uint32_t y, uint16_t symbol, uint16_t fontColor, const struct fontInfo *fontInfoStruct)
+uint16_t	LCD_printChar(uint32_t x, uint32_t y, uint16_t symbol, uint16_t fontColor, const struct fontInfo *fontInfoStruct)
 {	
 	uint8_t		i							=	0;
 	uint16_t	symbolWidth		=	0;
@@ -345,7 +277,7 @@ uint16_t	LCD_printChar2(uint32_t x, uint32_t y, uint16_t symbol, uint16_t fontCo
 	
 	if(symbol >= fontInfoStruct->startChar && symbol <= fontInfoStruct->endChar)
 	{
-		for(uint16_t fontDescptrBlockNum = 0; fontDescptrBlockNum < fontInfoStruct->CharBlockArrayLength; fontDescptrBlockNum++)
+		for(uint16_t fontDescptrBlockNum = 0; fontDescptrBlockNum < fontInfoStruct->charBlockArrayAmount; fontDescptrBlockNum++)
 		{
 			if(symbol >= fontInfoStruct->fontCharInfoLookupArray[fontDescptrBlockNum].startChar && symbol <= fontInfoStruct->fontCharInfoLookupArray[fontDescptrBlockNum].endChar)
 			{
@@ -377,9 +309,8 @@ uint16_t	LCD_printChar2(uint32_t x, uint32_t y, uint16_t symbol, uint16_t fontCo
 	return x;
 }
 
-
 // вывод строки
-uint16_t	LCD_printString2(uint32_t x, uint32_t y, char* str, uint16_t fontColor, const struct fontInfo *fontInfoStruct)
+uint16_t	LCD_printString(uint32_t x, uint32_t y, char* str, uint16_t fontColor, const struct fontInfo *fontInfoStruct)
 {
 //	x--;
 //	y--;
@@ -397,7 +328,7 @@ uint16_t	LCD_printString2(uint32_t x, uint32_t y, char* str, uint16_t fontColor,
 			x = x + 6;
 		}
 		
-		x = LCD_printChar2(x, y, symbol, fontColor, fontInfoStruct);		
+		x = LCD_printChar(x, y, symbol, fontColor, fontInfoStruct);		
 		
 		if(str && symbol != ' ')
 			x = x + 1;

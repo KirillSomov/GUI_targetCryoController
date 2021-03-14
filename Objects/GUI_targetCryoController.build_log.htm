@@ -22,7 +22,7 @@ Dialog DLL:      TCM.DLL V1.36.2.0
  
 <h2>Project:</h2>
 C:\Users\Kirill\Documents\Projects\Keil\1986BE92QI\GUI_targetCryoController\GUI_targetCryoController.uvprojx
-Project File Date:  01/19/2021
+Project File Date:  03/14/2021
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
@@ -31,11 +31,15 @@ compiling GUI_cryoTargetController.c...
 compiling main.c...
 compiling GUI.c...
 compiling Font.c...
-.\lib\HW_Layer\LCD_ILI9341.h(84): warning:  #231-D: declaration is not visible outside of function
-        uint16_t        LCD_printChar2(uint32_t x, uint32_t y, uint16_t symbol, uint16_t fontColor, const struct fontInfo *fontInfoStruct);
-.\lib\HW_Layer\LCD_ILI9341.h(85): warning:  #231-D: declaration is not visible outside of function
-        uint16_t        LCD_printString2(uint32_t x, uint32_t y, char* str, uint16_t fontColor, const struct fontInfo *fontInfoStruct);
+.\lib\HW_Layer\LCD_ILI9341.h(89): warning:  #231-D: declaration is not visible outside of function
+                                                                                                        const struct fontInfo *fontInfoStruct);
+.\lib\HW_Layer\LCD_ILI9341.h(92): warning:  #231-D: declaration is not visible outside of function
+                                                                                                                const struct fontInfo *fontInfoStruct);
 lib\Func_Layer\Font.c: 2 warnings, 0 errors
+compiling Picture.c...
+.\lib\HW_Layer\LCD_ILI9341.h(84): warning:  #231-D: declaration is not visible outside of function
+                                                                                                                const   struct pictureInfo *pictureInfoStruct);                                                 // отрисовка картинки
+lib\Func_Layer\Picture.c: 1 warning, 0 errors
 compiling CPU.c...
 compiling I2C.c...
 compiling LCD_ILI9341.c...
@@ -45,9 +49,9 @@ compiling Touch_FT6236.c...
 assembling startup_MDR32F9Qx.s...
 compiling system_MDR32F9Qx.c...
 linking...
-Program Size: Code=7970 RO-data=17950 RW-data=24 ZI-data=2600  
+Program Size: Code=8700 RO-data=6720 RW-data=28 ZI-data=2700  
 FromELF: creating hex file...
-".\Objects\GUI_targetCryoController.axf" - 0 Error(s), 2 Warning(s).
+".\Objects\GUI_targetCryoController.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -76,12 +80,12 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.4.0
 
    * Component: Keil::Device:Startup:1.5
-      Include file:  Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.h
-      Include file:  Config\MDR32F9Qx_config.h
-      Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.c
-      Include file:  Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
       Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\startup_MDR32F9Qx.s
-Build Time Elapsed:  00:00:06
+      Include file:  Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
+      Include file:  Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.h
+      Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.c
+      Include file:  Config\MDR32F9Qx_config.h
+Build Time Elapsed:  00:00:07
 </pre>
 </body>
 </html>

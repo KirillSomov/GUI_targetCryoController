@@ -1,6 +1,7 @@
 
 #include "Font.h"
 
+
 /* 
 **  Font data for Calibri 14pt
 */
@@ -448,27 +449,7 @@ const uint8_t calibri_14ptBitmaps[] =
 	0xFE, 0xFE, 0x0E, 0x7C, 0xE0, 0x00, 0x00, 0x00, 0xE0, 0x3C, 0x0E, 0xFE, 0xFE, 
 	0x1F, 0x1F, 0x00, 0x00, 0x01, 0x0F, 0x18, 0x0F, 0x01, 0x00, 0x00, 0x1F, 0x1F, 
 
-	/* @346 'а' (7 pixels wide) */
-	//        
-	//        
-	//        
-	//        
-	//  ##### 
-	// #    ##
-	//      ##
-	//      ##
-	//  ######
-	// ##   ##
-	// ##   ##
-	// ##  ###
-	//  ######
-	//        
-	//        
-	//        
-	0x20, 0x10, 0x10, 0x10, 0x10, 0xF0, 0xE0, 
-	0x0E, 0x1F, 0x11, 0x11, 0x19, 0x1F, 0x1F, 
-
-	/* @360 'в' (7 pixels wide) */
+	/* @346 'в' (7 pixels wide) */
 	//        
 	//        
 	//        
@@ -488,7 +469,7 @@ const uint8_t calibri_14ptBitmaps[] =
 	0xF0, 0xF0, 0x10, 0x10, 0x10, 0xF0, 0xE0, 
 	0x1F, 0x1F, 0x11, 0x11, 0x11, 0x1F, 0x0E, 
 
-	/* @374 'г' (5 pixels wide) */
+	/* @360 'г' (5 pixels wide) */
 	//      
 	//      
 	//      
@@ -508,7 +489,7 @@ const uint8_t calibri_14ptBitmaps[] =
 	0xF0, 0xF0, 0x10, 0x10, 0x10, 
 	0x1F, 0x1F, 0x00, 0x00, 0x00, 
 
-	/* @384 'д' (10 pixels wide) */
+	/* @370 'д' (10 pixels wide) */
 	//           
 	//           
 	//           
@@ -528,7 +509,7 @@ const uint8_t calibri_14ptBitmaps[] =
 	0x00, 0x00, 0xF0, 0xF0, 0x10, 0x10, 0x10, 0xF0, 0xF0, 0x00, 
 	0xF0, 0x1E, 0x17, 0x10, 0x10, 0x10, 0x10, 0x1F, 0x1F, 0xF0, 
 
-	/* @404 'е' (7 pixels wide) */
+	/* @390 'е' (7 pixels wide) */
 	//        
 	//        
 	//        
@@ -548,7 +529,7 @@ const uint8_t calibri_14ptBitmaps[] =
 	0xC0, 0xE0, 0x30, 0x10, 0x10, 0xF0, 0xE0, 
 	0x07, 0x0F, 0x19, 0x11, 0x11, 0x11, 0x09, 
 
-	/* @418 'и' (7 pixels wide) */
+	/* @404 'и' (7 pixels wide) */
 	//        
 	//        
 	//        
@@ -568,7 +549,7 @@ const uint8_t calibri_14ptBitmaps[] =
 	0xF0, 0xF0, 0x00, 0x80, 0xE0, 0xF0, 0xF0, 
 	0x1F, 0x1F, 0x0E, 0x03, 0x00, 0x1F, 0x1F, 
 
-	/* @432 'й' (7 pixels wide) */
+	/* @418 'й' (7 pixels wide) */
 	//  ##  ##
 	//  ##  ##
 	//   #### 
@@ -588,7 +569,7 @@ const uint8_t calibri_14ptBitmaps[] =
 	0xF0, 0xF3, 0x07, 0x84, 0xE4, 0xF7, 0xF3, 
 	0x1F, 0x1F, 0x0E, 0x03, 0x00, 0x1F, 0x1F, 
 
-	/* @446 'к' (7 pixels wide) */
+	/* @432 'к' (7 pixels wide) */
 	//        
 	//        
 	//        
@@ -608,7 +589,7 @@ const uint8_t calibri_14ptBitmaps[] =
 	0xF0, 0xF0, 0x00, 0x00, 0xC0, 0xF0, 0x30, 
 	0x1F, 0x1F, 0x01, 0x01, 0x06, 0x1E, 0x18, 
 
-	/* @460 'л' (8 pixels wide) */
+	/* @446 'л' (8 pixels wide) */
 	//         
 	//         
 	//         
@@ -628,7 +609,7 @@ const uint8_t calibri_14ptBitmaps[] =
 	0x00, 0x00, 0x00, 0xF0, 0x10, 0x10, 0xF0, 0xF0, 
 	0x10, 0x18, 0x0F, 0x01, 0x00, 0x00, 0x1F, 0x1F, 
 
-	/* @476 'м' (11 pixels wide) */
+	/* @462 'м' (11 pixels wide) */
 	//            
 	//            
 	//            
@@ -648,7 +629,7 @@ const uint8_t calibri_14ptBitmaps[] =
 	0xF0, 0xF0, 0xF0, 0xC0, 0x00, 0x00, 0x00, 0xC0, 0xF0, 0xF0, 0xF0, 
 	0x1F, 0x1F, 0x00, 0x03, 0x1F, 0x18, 0x0F, 0x03, 0x00, 0x1F, 0x1F, 
 
-	/* @498 'н' (7 pixels wide) */
+	/* @484 'н' (7 pixels wide) */
 	//        
 	//        
 	//        
@@ -668,7 +649,7 @@ const uint8_t calibri_14ptBitmaps[] =
 	0xF0, 0xF0, 0x00, 0x00, 0x00, 0xF0, 0xF0, 
 	0x1F, 0x1F, 0x01, 0x01, 0x01, 0x1F, 0x1F, 
 
-	/* @512 'о' (8 pixels wide) */
+	/* @498 'о' (8 pixels wide) */
 	//         
 	//         
 	//         
@@ -688,7 +669,7 @@ const uint8_t calibri_14ptBitmaps[] =
 	0xC0, 0xE0, 0x30, 0x10, 0x10, 0x30, 0xE0, 0xC0, 
 	0x07, 0x0F, 0x18, 0x10, 0x10, 0x18, 0x0F, 0x07, 
 
-	/* @528 'р' (8 pixels wide) */
+	/* @514 'р' (8 pixels wide) */
 	//         
 	//         
 	//         
@@ -708,27 +689,7 @@ const uint8_t calibri_14ptBitmaps[] =
 	0xF0, 0xF0, 0x20, 0x10, 0x10, 0x30, 0xE0, 0xC0, 
 	0xFF, 0xFF, 0x08, 0x10, 0x10, 0x18, 0x0F, 0x07, 
 
-	/* @544 'с' (7 pixels wide) */
-	//        
-	//        
-	//        
-	//        
-	//   #### 
-	//  ##   #
-	// ##     
-	// ##     
-	// ##     
-	// ##     
-	// ##     
-	//  ##   #
-	//   #### 
-	//        
-	//        
-	//        
-	0xC0, 0xE0, 0x30, 0x10, 0x10, 0x10, 0x20, 
-	0x07, 0x0F, 0x18, 0x10, 0x10, 0x10, 0x08, 
-
-	/* @558 'т' (8 pixels wide) */
+	/* @530 'т' (8 pixels wide) */
 	//         
 	//         
 	//         
@@ -748,7 +709,7 @@ const uint8_t calibri_14ptBitmaps[] =
 	0x10, 0x10, 0x10, 0xF0, 0xF0, 0x10, 0x10, 0x10, 
 	0x00, 0x00, 0x00, 0x1F, 0x1F, 0x00, 0x00, 0x00, 
 
-	/* @574 'ш' (12 pixels wide) */
+	/* @546 'ш' (12 pixels wide) */
 	//             
 	//             
 	//             
@@ -768,7 +729,7 @@ const uint8_t calibri_14ptBitmaps[] =
 	0xF0, 0xF0, 0x00, 0x00, 0x00, 0xF0, 0xF0, 0x00, 0x00, 0x00, 0xF0, 0xF0, 
 	0x1F, 0x1F, 0x10, 0x10, 0x10, 0x1F, 0x1F, 0x10, 0x10, 0x10, 0x1F, 0x1F, 
 
-	/* @598 'ы' (10 pixels wide) */
+	/* @570 'ы' (10 pixels wide) */
 	//           
 	//           
 	//           
@@ -795,107 +756,174 @@ const uint16_t calibri_14ptDescriptorsBlock0[][3] =
 {
 	{4, 2, 0}, 		/* - */ 
 	{2, 2, 8}, 		/* . */ 
-	{0, 0, 0}, 		/* / */ 
-	{8, 2, 12}, 		/* 0 */ 
-	{8, 2, 28}, 		/* 1 */ 
 };
 
 /* Character descriptors for Calibri 14pt(block #1) */
 /* { [Char width in bits], [Char height in bytes], [Offset into calibri_14ptCharBitmaps in bytes] } */
 const uint16_t calibri_14ptDescriptorsBlock1[][3] = 
 {
-	{11, 2, 44}, 		/* A */ 
-	{0, 0, 0}, 		/* B */ 
-	{9, 2, 66}, 		/* C */ 
-	{0, 0, 0}, 		/* D */ 
-	{7, 2, 84}, 		/* E */ 
-	{7, 2, 98}, 		/* F */ 
-	{0, 0, 0}, 		/* G */ 
-	{10, 2, 112}, 		/* H */ 
-	{2, 2, 132}, 		/* I */ 
-	{5, 2, 136}, 		/* J */ 
-	{0, 0, 0}, 		/* K */ 
-	{7, 2, 146}, 		/* L */ 
-	{0, 0, 0}, 		/* M */ 
-	{10, 2, 160}, 		/* N */ 
-	{11, 2, 180}, 		/* O */ 
-	{0, 0, 0}, 		/* P */ 
-	{0, 0, 0}, 		/* Q */ 
-	{9, 2, 202}, 		/* R */ 
-	{7, 2, 220}, 		/* S */ 
-	{8, 2, 234}, 		/* T */ 
-	{10, 2, 250}, 		/* U */ 
+	{8, 2, 12}, 		/* 0 */ 
+	{8, 2, 28}, 		/* 1 */ 
 };
 
 /* Character descriptors for Calibri 14pt(block #2) */
 /* { [Char width in bits], [Char height in bytes], [Offset into calibri_14ptCharBitmaps in bytes] } */
 const uint16_t calibri_14ptDescriptorsBlock2[][3] = 
 {
-	{9, 2, 270}, 		/* v */ 
+	{11, 2, 44}, 		/* A */ 
 };
 
 /* Character descriptors for Calibri 14pt(block #3) */
 /* { [Char width in bits], [Char height in bytes], [Offset into calibri_14ptCharBitmaps in bytes] } */
 const uint16_t calibri_14ptDescriptorsBlock3[][3] = 
 {
-	{8, 2, 288}, 		/* В */ 
+	{9, 2, 66}, 		/* C */ 
 };
 
 /* Character descriptors for Calibri 14pt(block #4) */
 /* { [Char width in bits], [Char height in bytes], [Offset into calibri_14ptCharBitmaps in bytes] } */
 const uint16_t calibri_14ptDescriptorsBlock4[][3] = 
 {
-	{8, 2, 304}, 		/* К */ 
-	{0, 0, 0}, 		/* Л */ 
-	{13, 2, 320}, 		/* М */ 
+	{7, 2, 84}, 		/* E */ 
+	{7, 2, 98}, 		/* F */ 
 };
 
 /* Character descriptors for Calibri 14pt(block #5) */
 /* { [Char width in bits], [Char height in bytes], [Offset into calibri_14ptCharBitmaps in bytes] } */
 const uint16_t calibri_14ptDescriptorsBlock5[][3] = 
 {
-	{7, 2, 346}, 		/* а */ 
-	{0, 0, 0}, 		/* б */ 
-	{7, 2, 360}, 		/* в */ 
-	{5, 2, 374}, 		/* г */ 
-	{10, 2, 384}, 		/* д */ 
-	{7, 2, 404}, 		/* е */ 
-	{0, 0, 0}, 		/* ж */ 
-	{0, 0, 0}, 		/* з */ 
-	{7, 2, 418}, 		/* и */ 
-	{7, 2, 432}, 		/* й */ 
-	{7, 2, 446}, 		/* к */ 
-	{8, 2, 460}, 		/* л */ 
-	{11, 2, 476}, 		/* м */ 
-	{7, 2, 498}, 		/* н */ 
-	{8, 2, 512}, 		/* о */ 
-	{0, 0, 0}, 		/* п */ 
-	{8, 2, 528}, 		/* р */ 
-	{7, 2, 544}, 		/* с */ 
-	{8, 2, 558}, 		/* т */ 
+	{10, 2, 112}, 		/* H */ 
+	{2, 2, 132}, 		/* I */ 
+	{5, 2, 136}, 		/* J */ 
 };
 
 /* Character descriptors for Calibri 14pt(block #6) */
 /* { [Char width in bits], [Char height in bytes], [Offset into calibri_14ptCharBitmaps in bytes] } */
 const uint16_t calibri_14ptDescriptorsBlock6[][3] = 
 {
-	{12, 2, 574}, 		/* ш */ 
-	{0, 0, 0}, 		/* щ */ 
-	{0, 0, 0}, 		/* ъ */ 
-	{10, 2, 598}, 		/* ы */ 
+	{7, 2, 146}, 		/* L */ 
+};
+
+/* Character descriptors for Calibri 14pt(block #7) */
+/* { [Char width in bits], [Char height in bytes], [Offset into calibri_14ptCharBitmaps in bytes] } */
+const uint16_t calibri_14ptDescriptorsBlock7[][3] = 
+{
+	{10, 2, 160}, 		/* N */ 
+	{11, 2, 180}, 		/* O */ 
+};
+
+/* Character descriptors for Calibri 14pt(block #8) */
+/* { [Char width in bits], [Char height in bytes], [Offset into calibri_14ptCharBitmaps in bytes] } */
+const uint16_t calibri_14ptDescriptorsBlock8[][3] = 
+{
+	{9, 2, 202}, 		/* R */ 
+	{7, 2, 220}, 		/* S */ 
+	{8, 2, 234}, 		/* T */ 
+	{10, 2, 250}, 		/* U */ 
+};
+
+/* Character descriptors for Calibri 14pt(block #9) */
+/* { [Char width in bits], [Char height in bytes], [Offset into calibri_14ptCharBitmaps in bytes] } */
+const uint16_t calibri_14ptDescriptorsBlock9[][3] = 
+{
+	{9, 2, 270}, 		/* v */ 
+};
+
+/* Character descriptors for Calibri 14pt(block #10) */
+/* { [Char width in bits], [Char height in bytes], [Offset into calibri_14ptCharBitmaps in bytes] } */
+const uint16_t calibri_14ptDescriptorsBlock10[][3] = 
+{
+	{8, 2, 288}, 		/* В */ 
+};
+
+/* Character descriptors for Calibri 14pt(block #11) */
+/* { [Char width in bits], [Char height in bytes], [Offset into calibri_14ptCharBitmaps in bytes] } */
+const uint16_t calibri_14ptDescriptorsBlock11[][3] = 
+{
+	{8, 2, 304}, 		/* К */ 
+};
+
+/* Character descriptors for Calibri 14pt(block #12) */
+/* { [Char width in bits], [Char height in bytes], [Offset into calibri_14ptCharBitmaps in bytes] } */
+const uint16_t calibri_14ptDescriptorsBlock12[][3] = 
+{
+	{13, 2, 320}, 		/* М */ 
+};
+
+/* Character descriptors for Calibri 14pt(block #13) */
+/* { [Char width in bits], [Char height in bytes], [Offset into calibri_14ptCharBitmaps in bytes] } */
+const uint16_t calibri_14ptDescriptorsBlock13[][3] = 
+{
+	{7, 2, 346}, 		/* в */ 
+	{5, 2, 360}, 		/* г */ 
+	{10, 2, 370}, 		/* д */ 
+	{7, 2, 390}, 		/* е */ 
+};
+
+/* Character descriptors for Calibri 14pt(block #14) */
+/* { [Char width in bits], [Char height in bytes], [Offset into calibri_14ptCharBitmaps in bytes] } */
+const uint16_t calibri_14ptDescriptorsBlock14[][3] = 
+{
+	{7, 2, 404}, 		/* и */ 
+	{7, 2, 418}, 		/* й */ 
+	{7, 2, 432}, 		/* к */ 
+	{8, 2, 446}, 		/* л */ 
+	{11, 2, 462}, 		/* м */ 
+	{7, 2, 484}, 		/* н */ 
+	{8, 2, 498}, 		/* о */ 
+};
+
+/* Character descriptors for Calibri 14pt(block #15) */
+/* { [Char width in bits], [Char height in bytes], [Offset into calibri_14ptCharBitmaps in bytes] } */
+const uint16_t calibri_14ptDescriptorsBlock15[][3] = 
+{
+	{8, 2, 514}, 		/* р */ 
+};
+
+/* Character descriptors for Calibri 14pt(block #16) */
+/* { [Char width in bits], [Char height in bytes], [Offset into calibri_14ptCharBitmaps in bytes] } */
+const uint16_t calibri_14ptDescriptorsBlock16[][3] = 
+{
+	{8, 2, 530}, 		/* т */ 
+};
+
+/* Character descriptors for Calibri 14pt(block #17) */
+/* { [Char width in bits], [Char height in bytes], [Offset into calibri_14ptCharBitmaps in bytes] } */
+const uint16_t calibri_14ptDescriptorsBlock17[][3] = 
+{
+	{12, 2, 546}, 		/* ш */ 
+};
+
+/* Character descriptors for Calibri 14pt(block #18) */
+/* { [Char width in bits], [Char height in bytes], [Offset into calibri_14ptCharBitmaps in bytes] } */
+const uint16_t calibri_14ptDescriptorsBlock18[][3] = 
+{
+	{10, 2, 570}, 		/* ы */ 
 };
 
 /* Block lookup array for Calibri 14pt  */
 /* { start character, end character, ptr to descriptor block array } */
 const struct fontCharInfoLookup calibri_14ptBlockLookup[] = 
 {
-	{'-', '1', &calibri_14ptDescriptorsBlock0[0]},
-	{'A', 'U', &calibri_14ptDescriptorsBlock1[0]},
-	{'v', 'v', &calibri_14ptDescriptorsBlock2[0]},
-	{194, 194, &calibri_14ptDescriptorsBlock3[0]},
-	{202, 204, &calibri_14ptDescriptorsBlock4[0]},
-	{224, 242, &calibri_14ptDescriptorsBlock5[0]},
-	{248, 251, &calibri_14ptDescriptorsBlock6[0]},
+	{'-', '.', &calibri_14ptDescriptorsBlock0[0]},
+	{'0', '1', &calibri_14ptDescriptorsBlock1[0]},
+	{'A', 'A', &calibri_14ptDescriptorsBlock2[0]},
+	{'C', 'C', &calibri_14ptDescriptorsBlock3[0]},
+	{'E', 'F', &calibri_14ptDescriptorsBlock4[0]},
+	{'H', 'J', &calibri_14ptDescriptorsBlock5[0]},
+	{'L', 'L', &calibri_14ptDescriptorsBlock6[0]},
+	{'N', 'O', &calibri_14ptDescriptorsBlock7[0]},
+	{'R', 'U', &calibri_14ptDescriptorsBlock8[0]},
+	{'v', 'v', &calibri_14ptDescriptorsBlock9[0]},
+	{194, 194, &calibri_14ptDescriptorsBlock10[0]},
+	{202, 202, &calibri_14ptDescriptorsBlock11[0]},
+	{204, 204, &calibri_14ptDescriptorsBlock12[0]},
+	{226, 229, &calibri_14ptDescriptorsBlock13[0]},
+	{232, 238, &calibri_14ptDescriptorsBlock14[0]},
+	{240, 240, &calibri_14ptDescriptorsBlock15[0]},
+	{242, 242, &calibri_14ptDescriptorsBlock16[0]},
+	{248, 248, &calibri_14ptDescriptorsBlock17[0]},
+	{251, 251, &calibri_14ptDescriptorsBlock18[0]},
 };
 
 /* Font information for Calibri 14pt */
@@ -905,7 +933,1266 @@ const struct fontInfo calibri_14ptFontInfo =
 	251, /*  End character */
 	2, /*  Width, in pixels, of space character */
 	calibri_14ptBlockLookup, /*  Character block lookup */
-	7,
-	0, /*  Character descriptor array */
+	19,
+	0,
 	calibri_14ptBitmaps, /*  Character bitmap array */
+};
+
+
+/* 
+**  Font data for Impact 18pt
+*/
+
+/* Character bitmaps for Impact 18pt */
+const uint8_t impact_18ptBitmaps[] = 
+{
+	/* @0 '.' (4 pixels wide) */
+	//     
+	//     
+	//     
+	//     
+	//     
+	//     
+	//     
+	//     
+	//     
+	//     
+	//     
+	//     
+	//     
+	//     
+	//     
+	// ####
+	// ####
+	// ####
+	// ####
+	//     
+	//     
+	//     
+	0x00, 0x00, 0x00, 0x00, 
+	0x80, 0x80, 0x80, 0x80, 
+	0x07, 0x07, 0x07, 0x07, 
+
+	/* @12 '0' (10 pixels wide) */
+	//   #####   
+	//  ######## 
+	//  ######## 
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	//  #########
+	//  ######## 
+	//   ######  
+	//           
+	//           
+	//           
+	0xF8, 0xFE, 0xFF, 0xFF, 0x07, 0x07, 0xFF, 0xFE, 0xFE, 0xF8, 
+	0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 
+	0x00, 0x03, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x03, 0x01, 
+
+	/* @42 '1' (7 pixels wide) */
+	//      ##
+	//     ###
+	//   #####
+	// #######
+	// #######
+	//    ####
+	//    ####
+	//    ####
+	//    ####
+	//    ####
+	//    ####
+	//    ####
+	//    ####
+	//    ####
+	//    ####
+	//    ####
+	//    ####
+	//    ####
+	//    ####
+	//        
+	//        
+	//        
+	0x18, 0x18, 0x1C, 0xFC, 0xFE, 0xFF, 0xFF, 
+	0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 
+	0x00, 0x00, 0x00, 0x07, 0x07, 0x07, 0x07, 
+
+	/* @63 '2' (9 pixels wide) */
+	//   #####  
+	//  ####### 
+	// #########
+	// ###  ####
+	// ###  ####
+	// ###  ####
+	// ###  ####
+	//     #####
+	//     #### 
+	//    ##### 
+	//    ####  
+	//    ####  
+	//   ####   
+	//   ####   
+	//  ####    
+	//  ####    
+	// #########
+	// #########
+	// #########
+	//          
+	//          
+	//          
+	0x7C, 0x7E, 0x7F, 0x07, 0x87, 0xFF, 0xFF, 0xFE, 0xFC, 
+	0x00, 0xC0, 0xF0, 0xFE, 0xFF, 0x3F, 0x0F, 0x03, 0x00, 
+	0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 
+
+	/* @90 '3' (10 pixels wide) */
+	//   ######  
+	//  ######## 
+	// ##########
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	//       ####
+	//    ###### 
+	//    #####  
+	//    #######
+	//       ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ##########
+	//  ######## 
+	//   ######  
+	//           
+	//           
+	//           
+	0x3C, 0x3E, 0x3F, 0xBF, 0x87, 0x87, 0xFF, 0xFF, 0xFE, 0x7C, 
+	0xF8, 0xF8, 0xF8, 0xFB, 0x03, 0x03, 0xFF, 0xFF, 0xFE, 0xFE, 
+	0x01, 0x03, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x03, 0x01, 
+
+	/* @120 '4' (11 pixels wide) */
+	//     ###### 
+	//     ###### 
+	//    ####### 
+	//    ####### 
+	//    ####### 
+	//   ### #### 
+	//   ### #### 
+	//   ### #### 
+	//  ###  #### 
+	//  ###  #### 
+	//  ###  #### 
+	// ###   #### 
+	// ###########
+	// ###########
+	// ###########
+	// ###########
+	//       #### 
+	//       #### 
+	//       #### 
+	//            
+	//            
+	//            
+	0x00, 0x00, 0xE0, 0xFC, 0xFF, 0x1F, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 
+	0xF8, 0xFF, 0xFF, 0xF7, 0xF0, 0xF0, 0xFF, 0xFF, 0xFF, 0xFF, 0xF0, 
+	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x07, 0x07, 0x07, 0x07, 0x00, 
+
+	/* @153 '5' (10 pixels wide) */
+	// ##########
+	// ##########
+	// ##########
+	// ####      
+	// ####      
+	// #### ###  
+	// ######### 
+	// ##########
+	// ####  ####
+	// ####  ####
+	//       ####
+	//       ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ##########
+	//  ######## 
+	//   ######  
+	//           
+	//           
+	//           
+	0xFF, 0xFF, 0xFF, 0xFF, 0xC7, 0xE7, 0xE7, 0xE7, 0xC7, 0x87, 
+	0xF3, 0xF3, 0xF3, 0xF3, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 
+	0x01, 0x03, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x03, 0x01, 
+
+	/* @183 '6' (10 pixels wide) */
+	//   ######  
+	//  ######## 
+	//  #########
+	// ####  ####
+	// ####  ####
+	// ####      
+	// #### ###  
+	// ######### 
+	// ##########
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	//  #########
+	//  ######## 
+	//   ######  
+	//           
+	//           
+	//           
+	0xF8, 0xFE, 0xFF, 0xFF, 0x87, 0xC7, 0xDF, 0xDF, 0x9E, 0x1C, 
+	0xFF, 0xFF, 0xFF, 0xFF, 0x01, 0x01, 0xFF, 0xFF, 0xFF, 0xFF, 
+	0x00, 0x03, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x03, 0x01, 
+
+	/* @213 '7' (8 pixels wide) */
+	// ########
+	// ########
+	// ########
+	//     ####
+	//     ####
+	//     ####
+	//     ### 
+	//     ### 
+	//    #### 
+	//    #### 
+	//    #### 
+	//    ###  
+	//   ####  
+	//   ####  
+	//   ####  
+	//   ####  
+	//   ###   
+	//  ####   
+	//  ####   
+	//         
+	//         
+	//         
+	0x07, 0x07, 0x07, 0x07, 0xFF, 0xFF, 0xFF, 0x3F, 
+	0x00, 0x00, 0xF0, 0xFF, 0xFF, 0xFF, 0x07, 0x00, 
+	0x00, 0x06, 0x07, 0x07, 0x07, 0x00, 0x00, 0x00, 
+
+	/* @237 '8' (10 pixels wide) */
+	//   ######  
+	//  ######## 
+	// ##########
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	//  ######## 
+	//   ######  
+	//  ######## 
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ##########
+	//  ######## 
+	//   ######  
+	//           
+	//           
+	//           
+	0x7C, 0xFE, 0xFF, 0xFF, 0x87, 0x87, 0xFF, 0xFF, 0xFE, 0x7C, 
+	0xFC, 0xFE, 0xFF, 0xFF, 0x03, 0x03, 0xFF, 0xFF, 0xFE, 0xFC, 
+	0x01, 0x03, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x03, 0x01, 
+
+	/* @267 '9' (10 pixels wide) */
+	//   ######  
+	//  ######## 
+	// ##########
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ##########
+	//  #########
+	//   ### ####
+	//       ####
+	// ####  ####
+	// ####  ####
+	// ######### 
+	//  ######## 
+	//   #####   
+	//           
+	//           
+	//           
+	0xFC, 0xFE, 0xFF, 0xFF, 0x07, 0x07, 0xFF, 0xFF, 0xFE, 0xFC, 
+	0xC7, 0xCF, 0xDF, 0xDF, 0x1C, 0x0C, 0xFF, 0xFF, 0xFF, 0xFF, 
+	0x01, 0x03, 0x07, 0x07, 0x07, 0x07, 0x07, 0x03, 0x03, 0x00, 
+
+	/* @297 ':' (4 pixels wide) */
+	//     
+	//     
+	//     
+	//     
+	//     
+	//     
+	//     
+	// ####
+	// ####
+	// ####
+	// ####
+	//     
+	//     
+	//     
+	//     
+	// ####
+	// ####
+	// ####
+	// ####
+	//     
+	//     
+	//     
+	0x80, 0x80, 0x80, 0x80, 
+	0x87, 0x87, 0x87, 0x87, 
+	0x07, 0x07, 0x07, 0x07, 
+
+	/* @309 'А' (11 pixels wide) */
+	//   #######  
+	//   #######  
+	//   #######  
+	//   ### ###  
+	//   ### ###  
+	//   ### ###  
+	//  #### #### 
+	//  #### #### 
+	//  #### #### 
+	//  #### #### 
+	//  ###   ### 
+	//  ###   ### 
+	//  ###   ### 
+	//  ######### 
+	//  ######### 
+	// ###########
+	// ####   ####
+	// ####   ####
+	// ####   ####
+	//            
+	//            
+	//            
+	0x00, 0xC0, 0xFF, 0xFF, 0xFF, 0x07, 0xFF, 0xFF, 0xFF, 0xC0, 0x00, 
+	0x80, 0xFF, 0xFF, 0xFF, 0xE3, 0xE0, 0xE3, 0xFF, 0xFF, 0xFF, 0x80, 
+	0x07, 0x07, 0x07, 0x07, 0x00, 0x00, 0x00, 0x07, 0x07, 0x07, 0x07, 
+
+	/* @342 'В' (10 pixels wide) */
+	// ########  
+	// ######### 
+	// ##########
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ##########
+	// ########  
+	// ######### 
+	// ##########
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ##########
+	// ######### 
+	// ######### 
+	//           
+	//           
+	//           
+	0xFF, 0xFF, 0xFF, 0xFF, 0xC7, 0xC7, 0xFF, 0xFF, 0x7E, 0x7C, 
+	0xFF, 0xFF, 0xFF, 0xFF, 0x03, 0x03, 0xFF, 0xFF, 0xFF, 0xFE, 
+	0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x01, 
+
+	/* @372 'Г' (8 pixels wide) */
+	// ########
+	// ########
+	// ########
+	// ########
+	// ####    
+	// ####    
+	// ####    
+	// ####    
+	// ####    
+	// ####    
+	// ####    
+	// ####    
+	// ####    
+	// ####    
+	// ####    
+	// ####    
+	// ####    
+	// ####    
+	// ####    
+	//         
+	//         
+	//         
+	0xFF, 0xFF, 0xFF, 0xFF, 0x0F, 0x0F, 0x0F, 0x0F, 
+	0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 
+	0x07, 0x07, 0x07, 0x07, 0x00, 0x00, 0x00, 0x00, 
+
+	/* @396 'Д' (15 pixels wide) */
+	//    ########### 
+	//    ########### 
+	//    ########### 
+	//    ########### 
+	//    ####   #### 
+	//    ####   #### 
+	//    ####   #### 
+	//    ####   #### 
+	//   #####   #### 
+	//   #####   #### 
+	//   ####    #### 
+	//   ####    #### 
+	//   ####    #### 
+	//  #####    #### 
+	//  ####     #### 
+	// ###############
+	// ###############
+	// ###############
+	// ###############
+	// ####       ####
+	// ####       ####
+	// ####       ####
+	0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0x0F, 0x0F, 0x0F, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 
+	0x80, 0xE0, 0xFF, 0xFF, 0xFF, 0xBF, 0x83, 0x80, 0x80, 0x80, 0xFF, 0xFF, 0xFF, 0xFF, 0x80, 
+	0x3F, 0x3F, 0x3F, 0x3F, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x3F, 0x3F, 0x3F, 0x3F, 
+
+	/* @441 'Е' (8 pixels wide) */
+	// ####### 
+	// ####### 
+	// ####### 
+	// ####### 
+	// ####    
+	// ####    
+	// ####    
+	// ####### 
+	// ####### 
+	// ####### 
+	// ####### 
+	// ####    
+	// ####    
+	// ####    
+	// ####    
+	// ########
+	// ########
+	// ########
+	// ########
+	//         
+	//         
+	//         
+	0xFF, 0xFF, 0xFF, 0xFF, 0x8F, 0x8F, 0x8F, 0x00, 
+	0xFF, 0xFF, 0xFF, 0xFF, 0x87, 0x87, 0x87, 0x80, 
+	0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 
+
+	/* @465 'Ж' (18 pixels wide) */
+	// #####  ####  #####
+	//  ####  ####  #### 
+	//  ####  ####  #### 
+	//  ####  ####  #### 
+	//  ####  ####  #### 
+	//  ####  ####  #### 
+	//  ####  ####  #### 
+	//  ####  ####  #### 
+	//   ##############  
+	//     ##########    
+	//   ##############  
+	//  ####  ####  #### 
+	//  ####  ####  #### 
+	//  ####  ####  #### 
+	//  ####  ####  #### 
+	//  ####  ####  #### 
+	//  ####  ####  #### 
+	//  ####  ####  #### 
+	// #####  ####  #####
+	//                   
+	//                   
+	//                   
+	0x01, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0x01, 
+	0x00, 0xF8, 0xFD, 0xFD, 0xFF, 0x07, 0x07, 0xFF, 0xFF, 0xFF, 0xFF, 0x07, 0x07, 0xFF, 0xFD, 0xFD, 0xF8, 0x00, 
+	0x04, 0x07, 0x07, 0x07, 0x07, 0x00, 0x00, 0x07, 0x07, 0x07, 0x07, 0x00, 0x00, 0x07, 0x07, 0x07, 0x07, 0x04, 
+
+	/* @519 'К' (11 pixels wide) */
+	// ####   ####
+	// ####  #### 
+	// ####  #### 
+	// ####  #### 
+	// ####  #### 
+	// ####  #### 
+	// ####  #### 
+	// ####  #### 
+	// #########  
+	// #######    
+	// #########  
+	// ####  #### 
+	// ####  #### 
+	// ####  #### 
+	// ####  #### 
+	// ####  #### 
+	// ####  #### 
+	// ####  #### 
+	// ####   ####
+	//            
+	//            
+	//            
+	0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0xFE, 0xFF, 0xFF, 0xFF, 0x01, 
+	0xFF, 0xFF, 0xFF, 0xFF, 0x07, 0x07, 0xFF, 0xFD, 0xFD, 0xF8, 0x00, 
+	0x07, 0x07, 0x07, 0x07, 0x00, 0x00, 0x03, 0x07, 0x07, 0x07, 0x04, 
+
+	/* @552 'Л' (12 pixels wide) */
+	//  ###########
+	//  ###########
+	//  ###########
+	//  ###########
+	//  ####   ####
+	//  ####   ####
+	//  ####   ####
+	//  ####   ####
+	//  ####   ####
+	//  ####   ####
+	//  ####   ####
+	//  ####   ####
+	//  ####   ####
+	//  ####   ####
+	//  ####   ####
+	//  ####   ####
+	// #####   ####
+	// ####    ####
+	// ####    ####
+	//             
+	//             
+	//             
+	0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0x0F, 0x0F, 0x0F, 0xFF, 0xFF, 0xFF, 0xFF, 
+	0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 
+	0x07, 0x07, 0x07, 0x07, 0x01, 0x00, 0x00, 0x00, 0x07, 0x07, 0x07, 0x07, 
+
+	/* @588 'Н' (10 pixels wide) */
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ##########
+	// ##########
+	// ##########
+	// ##########
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	//           
+	//           
+	//           
+	0xFF, 0xFF, 0xFF, 0xFF, 0x80, 0x80, 0xFF, 0xFF, 0xFF, 0xFF, 
+	0xFF, 0xFF, 0xFF, 0xFF, 0x07, 0x07, 0xFF, 0xFF, 0xFF, 0xFF, 
+	0x07, 0x07, 0x07, 0x07, 0x00, 0x00, 0x07, 0x07, 0x07, 0x07, 
+
+	/* @618 'О' (10 pixels wide) */
+	//    ####   
+	//  ######## 
+	//  ######## 
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	//  ######## 
+	//  ######## 
+	//    ####   
+	//           
+	//           
+	//           
+	0xF8, 0xFE, 0xFE, 0xFF, 0x07, 0x07, 0xFF, 0xFE, 0xFE, 0xF8, 
+	0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 
+	0x00, 0x03, 0x03, 0x07, 0x07, 0x07, 0x07, 0x03, 0x03, 0x00, 
+
+	/* @648 'Р' (10 pixels wide) */
+	// ########  
+	// ######### 
+	// ##########
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ##########
+	// ##########
+	// ########  
+	// ####      
+	// ####      
+	// ####      
+	// ####      
+	// ####      
+	// ####      
+	// ####      
+	// ####      
+	//           
+	//           
+	//           
+	0xFF, 0xFF, 0xFF, 0xFF, 0x07, 0x07, 0xFF, 0xFF, 0xFE, 0xFC, 
+	0xFF, 0xFF, 0xFF, 0xFF, 0x07, 0x07, 0x07, 0x07, 0x03, 0x03, 
+	0x07, 0x07, 0x07, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+
+	/* @678 'Т' (10 pixels wide) */
+	// ##########
+	// ##########
+	// ##########
+	// ##########
+	//    ####   
+	//    ####   
+	//    ####   
+	//    ####   
+	//    ####   
+	//    ####   
+	//    ####   
+	//    ####   
+	//    ####   
+	//    ####   
+	//    ####   
+	//    ####   
+	//    ####   
+	//    ####   
+	//    ####   
+	//           
+	//           
+	//           
+	0x0F, 0x0F, 0x0F, 0xFF, 0xFF, 0xFF, 0xFF, 0x0F, 0x0F, 0x0F, 
+	0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 
+	0x00, 0x00, 0x00, 0x07, 0x07, 0x07, 0x07, 0x00, 0x00, 0x00, 
+
+	/* @708 'Х' (11 pixels wide) */
+	// ####   ####
+	// ####   ####
+	// ####   ####
+	//  #### #### 
+	//  #### #### 
+	//  #### #### 
+	//   #######  
+	//   #######  
+	//   #######  
+	//   #######  
+	//   #######  
+	//   ### ###  
+	//  #### #### 
+	//  #### #### 
+	//  #### #### 
+	// ####   ####
+	// ####   ####
+	// ####   ####
+	// ####   ####
+	//            
+	//            
+	//            
+	0x07, 0x3F, 0xFF, 0xFF, 0xF8, 0xC0, 0xF8, 0xFF, 0xFF, 0x3F, 0x07, 
+	0x80, 0xF0, 0xFF, 0xFF, 0x7F, 0x07, 0x7F, 0xFF, 0xFF, 0xF0, 0x80, 
+	0x07, 0x07, 0x07, 0x07, 0x00, 0x00, 0x00, 0x07, 0x07, 0x07, 0x07, 
+
+	/* @741 'Ы' (17 pixels wide) */
+	// ####         ####
+	// ####         ####
+	// ####         ####
+	// ####         ####
+	// ####         ####
+	// ####         ####
+	// ####         ####
+	// #########    ####
+	// ##########   ####
+	// ###########  ####
+	// ####   ####  ####
+	// ####   ####  ####
+	// ####   ####  ####
+	// ####   ####  ####
+	// ####   ####  ####
+	// ####   ####  ####
+	// ###########  ####
+	// ###########  ####
+	// ##########   ####
+	//                  
+	//                  
+	//                  
+	0xFF, 0xFF, 0xFF, 0xFF, 0x80, 0x80, 0x80, 0x80, 0x80, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 
+	0xFF, 0xFF, 0xFF, 0xFF, 0x03, 0x03, 0x03, 0xFF, 0xFF, 0xFF, 0xFE, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 
+	0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x03, 0x00, 0x00, 0x07, 0x07, 0x07, 0x07, 
+
+	/* @792 'а' (10 pixels wide) */
+	//           
+	//           
+	//           
+	//   ######  
+	//  ######## 
+	// ##########
+	// ###   ####
+	// ###   ####
+	// ###   ####
+	//     ######
+	//   ########
+	//  #### ####
+	// ###   ####
+	// ###   ####
+	// ###   ####
+	// ###   ####
+	// ##########
+	// ##########
+	//  #### ####
+	//           
+	//           
+	//           
+	0xE0, 0xF0, 0xF8, 0x38, 0x38, 0x38, 0xF8, 0xF8, 0xF0, 0xE0, 
+	0xF1, 0xF9, 0xFD, 0x0C, 0x0E, 0x06, 0xFF, 0xFF, 0xFF, 0xFF, 
+	0x03, 0x07, 0x07, 0x07, 0x07, 0x03, 0x07, 0x07, 0x07, 0x07, 
+
+	/* @822 'е' (10 pixels wide) */
+	//           
+	//           
+	//           
+	//   #####   
+	//  ######## 
+	// ######### 
+	// ####  ####
+	// ####  ####
+	// ##########
+	// ##########
+	// ##########
+	// ####      
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ######### 
+	//  ######## 
+	//    #####  
+	//           
+	//           
+	//           
+	0xE0, 0xF0, 0xF8, 0xF8, 0x38, 0x38, 0xF8, 0xF0, 0xF0, 0xC0, 
+	0xFF, 0xFF, 0xFF, 0xFF, 0x07, 0x07, 0xF7, 0xF7, 0xF7, 0xF7, 
+	0x01, 0x03, 0x03, 0x07, 0x07, 0x07, 0x07, 0x07, 0x03, 0x00, 
+
+	/* @852 'з' (10 pixels wide) */
+	//           
+	//           
+	//           
+	//   ######  
+	//  ######## 
+	// ##########
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	//       ####
+	//     ##### 
+	//     ##### 
+	//       ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ##########
+	//  ######## 
+	//   ######  
+	//           
+	//           
+	//           
+	0xE0, 0xF0, 0xF8, 0xF8, 0x38, 0x38, 0xF8, 0xF8, 0xF0, 0xE0, 
+	0xE1, 0xE1, 0xE1, 0xE1, 0x0C, 0x0C, 0xFF, 0xFF, 0xFF, 0xF3, 
+	0x01, 0x03, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x03, 0x01, 
+
+	/* @882 'и' (11 pixels wide) */
+	//            
+	//            
+	//            
+	// ####   ####
+	// ####  #####
+	// ####  #####
+	// ####  #####
+	// ####  #####
+	// #### ######
+	// #### ######
+	// #### # ####
+	// #### # ####
+	// ###### ####
+	// ###### ####
+	// #####  ####
+	// #####  ####
+	// #####  ####
+	// #####  ####
+	// ####   ####
+	//            
+	//            
+	//            
+	0xF8, 0xF8, 0xF8, 0xF8, 0x00, 0x00, 0xF0, 0xF8, 0xF8, 0xF8, 0xF8, 
+	0xFF, 0xFF, 0xFF, 0xFF, 0xF0, 0x3F, 0x03, 0xFF, 0xFF, 0xFF, 0xFF, 
+	0x07, 0x07, 0x07, 0x07, 0x03, 0x00, 0x00, 0x07, 0x07, 0x07, 0x07, 
+
+	/* @915 'к' (11 pixels wide) */
+	//            
+	//            
+	//            
+	// ####  #####
+	// ####  #### 
+	// ####  #### 
+	// ####  #### 
+	// ####  #### 
+	// ####  #### 
+	// #########  
+	// #######    
+	// #########  
+	// ####  #### 
+	// ####  #### 
+	// ####  #### 
+	// ####  #### 
+	// ####  #### 
+	// ####  #### 
+	// ####   ####
+	//            
+	//            
+	//            
+	0xF8, 0xF8, 0xF8, 0xF8, 0x00, 0x00, 0xF8, 0xF8, 0xF8, 0xF8, 0x08, 
+	0xFF, 0xFF, 0xFF, 0xFF, 0x0E, 0x0E, 0xFF, 0xFB, 0xFB, 0xF1, 0x00, 
+	0x07, 0x07, 0x07, 0x07, 0x00, 0x00, 0x03, 0x07, 0x07, 0x07, 0x04, 
+
+	/* @948 'л' (12 pixels wide) */
+	//             
+	//             
+	//             
+	//   ##########
+	//   ##########
+	//   ##########
+	//   ####  ####
+	//   ####  ####
+	//   ####  ####
+	//   ####  ####
+	//   ####  ####
+	//   ####  ####
+	//   ####  ####
+	//   ####  ####
+	//   ####  ####
+	//   ####  ####
+	// ######  ####
+	// ######  ####
+	// #####   ####
+	//             
+	//             
+	//             
+	0x00, 0x00, 0xF8, 0xF8, 0xF8, 0xF8, 0x38, 0x38, 0xF8, 0xF8, 0xF8, 0xF8, 
+	0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 
+	0x07, 0x07, 0x07, 0x07, 0x07, 0x03, 0x00, 0x00, 0x07, 0x07, 0x07, 0x07, 
+
+	/* @984 'м' (14 pixels wide) */
+	//               
+	//               
+	//               
+	// #####   ######
+	// ######  ######
+	// ######  ######
+	// ######  ######
+	// ######  ######
+	// ######  ######
+	// ######  ######
+	// ##############
+	// #### #### ####
+	// #### #### ####
+	// #### #### ####
+	// #### #### ####
+	// #### #### ####
+	// #### #### ####
+	// ####  ##  ####
+	// ####  ##  ####
+	//               
+	//               
+	//               
+	0xF8, 0xF8, 0xF8, 0xF8, 0xF8, 0xF0, 0x00, 0x00, 0xF8, 0xF8, 0xF8, 0xF8, 0xF8, 0xF8, 
+	0xFF, 0xFF, 0xFF, 0xFF, 0x07, 0xFF, 0xFC, 0xFC, 0xFF, 0x07, 0xFF, 0xFF, 0xFF, 0xFF, 
+	0x07, 0x07, 0x07, 0x07, 0x00, 0x01, 0x07, 0x07, 0x01, 0x00, 0x07, 0x07, 0x07, 0x07, 
+
+	/* @1026 'н' (11 pixels wide) */
+	//            
+	//            
+	//            
+	// ####   ####
+	// ####   ####
+	// ####   ####
+	// ####   ####
+	// ####   ####
+	// ####   ####
+	// ###########
+	// ###########
+	// ###########
+	// ###########
+	// ####   ####
+	// ####   ####
+	// ####   ####
+	// ####   ####
+	// ####   ####
+	// ####   ####
+	//            
+	//            
+	//            
+	0xF8, 0xF8, 0xF8, 0xF8, 0x00, 0x00, 0x00, 0xF8, 0xF8, 0xF8, 0xF8, 
+	0xFF, 0xFF, 0xFF, 0xFF, 0x1E, 0x1E, 0x1E, 0xFF, 0xFF, 0xFF, 0xFF, 
+	0x07, 0x07, 0x07, 0x07, 0x00, 0x00, 0x00, 0x07, 0x07, 0x07, 0x07, 
+
+	/* @1059 'о' (10 pixels wide) */
+	//           
+	//           
+	//           
+	//   #####   
+	//  ######## 
+	//  #########
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ######### 
+	//  ######## 
+	//   ######  
+	//           
+	//           
+	//           
+	0xC0, 0xF0, 0xF8, 0xF8, 0x38, 0x38, 0xF8, 0xF0, 0xF0, 0xE0, 
+	0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 
+	0x01, 0x03, 0x07, 0x07, 0x07, 0x07, 0x07, 0x07, 0x03, 0x00, 
+
+	/* @1089 'р' (10 pixels wide) */
+	//           
+	//           
+	//           
+	// #### #### 
+	// ##########
+	// ##########
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ##########
+	// ##########
+	// #### #### 
+	// ####      
+	// ####      
+	//           
+	0xF8, 0xF8, 0xF8, 0xF8, 0x30, 0x38, 0xF8, 0xF8, 0xF8, 0xF0, 
+	0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 
+	0x1F, 0x1F, 0x1F, 0x1F, 0x03, 0x07, 0x07, 0x07, 0x07, 0x03, 
+
+	/* @1119 'с' (10 pixels wide) */
+	//           
+	//           
+	//           
+	//   #####   
+	//  ######## 
+	// ##########
+	// ####   ###
+	// ####   ###
+	// ####   ###
+	// ####      
+	// ####      
+	// ####      
+	// ####   ###
+	// ####   ###
+	// ####   ###
+	// ####   ###
+	//  ######## 
+	//  ######## 
+	//   #####   
+	//           
+	//           
+	//           
+	0xE0, 0xF0, 0xF8, 0xF8, 0x38, 0x38, 0x38, 0xF0, 0xF0, 0xE0, 
+	0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0xF1, 0xF1, 0xF1, 
+	0x00, 0x03, 0x07, 0x07, 0x07, 0x07, 0x07, 0x03, 0x03, 0x00, 
+
+	/* @1149 'т' (10 pixels wide) */
+	//           
+	//           
+	//           
+	// ##########
+	// ##########
+	// ##########
+	//    ####   
+	//    ####   
+	//    ####   
+	//    ####   
+	//    ####   
+	//    ####   
+	//    ####   
+	//    ####   
+	//    ####   
+	//    ####   
+	//    ####   
+	//    ####   
+	//    ####   
+	//           
+	//           
+	//           
+	0x38, 0x38, 0x38, 0xF8, 0xF8, 0xF8, 0xF8, 0x38, 0x38, 0x38, 
+	0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 
+	0x00, 0x00, 0x00, 0x07, 0x07, 0x07, 0x07, 0x00, 0x00, 0x00, 
+
+	/* @1179 'у' (11 pixels wide) */
+	//            
+	//            
+	//            
+	// ####   ####
+	// ####   ####
+	//  ###   ### 
+	//  ###   ### 
+	//  ###   ### 
+	//  #### #### 
+	//  #### #### 
+	//   ### #### 
+	//   ### #### 
+	//   ### #### 
+	//   ### ###  
+	//    ## ###  
+	//    ######  
+	//    ######  
+	//    ######  
+	//  ########  
+	//  #######   
+	//  ######    
+	//            
+	0x18, 0xF8, 0xF8, 0xF8, 0x00, 0x00, 0x00, 0xF8, 0xF8, 0xF8, 0x18, 
+	0x00, 0x03, 0x3F, 0xFF, 0xFF, 0x80, 0xFF, 0xFF, 0xFF, 0x1F, 0x00, 
+	0x00, 0x1C, 0x1C, 0x1F, 0x1F, 0x1F, 0x1F, 0x0F, 0x07, 0x00, 0x00, 
+
+	/* @1212 'ч' (10 pixels wide) */
+	//           
+	//           
+	//           
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ####  ####
+	// ##########
+	// ##########
+	//  #### ####
+	//       ####
+	//       ####
+	//       ####
+	//       ####
+	//           
+	//           
+	//           
+	0xF8, 0xF8, 0xF8, 0xF8, 0x00, 0x00, 0xF8, 0xF8, 0xF8, 0xF8, 
+	0x3F, 0x7F, 0x7F, 0x7F, 0x70, 0x30, 0xFF, 0xFF, 0xFF, 0xFF, 
+	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x07, 0x07, 0x07, 0x07, 
+};
+
+/* Character descriptors for Impact 18pt(block #0) */
+/* { [Char width in bits], [Char height in bytes], [Offset into impact_18ptCharBitmaps in bytes] } */
+const uint16_t impact_18ptDescriptorsBlock0[][3] = 
+{
+	{4, 3, 0}, 		/* . */ 
+};
+
+/* Character descriptors for Impact 18pt(block #1) */
+/* { [Char width in bits], [Char height in bytes], [Offset into impact_18ptCharBitmaps in bytes] } */
+const uint16_t impact_18ptDescriptorsBlock1[][3] = 
+{
+	{10, 3, 12}, 		/* 0 */ 
+	{7, 3, 42}, 		/* 1 */ 
+	{9, 3, 63}, 		/* 2 */ 
+	{10, 3, 90}, 		/* 3 */ 
+	{11, 3, 120}, 		/* 4 */ 
+	{10, 3, 153}, 		/* 5 */ 
+	{10, 3, 183}, 		/* 6 */ 
+	{8, 3, 213}, 		/* 7 */ 
+	{10, 3, 237}, 		/* 8 */ 
+	{10, 3, 267}, 		/* 9 */ 
+	{4, 3, 297}, 		/* : */ 
+};
+
+/* Character descriptors for Impact 18pt(block #2) */
+/* { [Char width in bits], [Char height in bytes], [Offset into impact_18ptCharBitmaps in bytes] } */
+const uint16_t impact_18ptDescriptorsBlock2[][3] = 
+{
+	{11, 3, 309}, 		/* А */ 
+};
+
+/* Character descriptors for Impact 18pt(block #3) */
+/* { [Char width in bits], [Char height in bytes], [Offset into impact_18ptCharBitmaps in bytes] } */
+const uint16_t impact_18ptDescriptorsBlock3[][3] = 
+{
+	{10, 3, 342}, 		/* В */ 
+	{8, 3, 372}, 		/* Г */ 
+	{15, 3, 396}, 		/* Д */ 
+	{8, 3, 441}, 		/* Е */ 
+	{18, 3, 465}, 		/* Ж */ 
+};
+
+/* Character descriptors for Impact 18pt(block #4) */
+/* { [Char width in bits], [Char height in bytes], [Offset into impact_18ptCharBitmaps in bytes] } */
+const uint16_t impact_18ptDescriptorsBlock4[][3] = 
+{
+	{11, 3, 519}, 		/* К */ 
+	{12, 3, 552}, 		/* Л */ 
+};
+
+/* Character descriptors for Impact 18pt(block #5) */
+/* { [Char width in bits], [Char height in bytes], [Offset into impact_18ptCharBitmaps in bytes] } */
+const uint16_t impact_18ptDescriptorsBlock5[][3] = 
+{
+	{10, 3, 588}, 		/* Н */ 
+	{10, 3, 618}, 		/* О */ 
+};
+
+/* Character descriptors for Impact 18pt(block #6) */
+/* { [Char width in bits], [Char height in bytes], [Offset into impact_18ptCharBitmaps in bytes] } */
+const uint16_t impact_18ptDescriptorsBlock6[][3] = 
+{
+	{10, 3, 648}, 		/* Р */ 
+};
+
+/* Character descriptors for Impact 18pt(block #7) */
+/* { [Char width in bits], [Char height in bytes], [Offset into impact_18ptCharBitmaps in bytes] } */
+const uint16_t impact_18ptDescriptorsBlock7[][3] = 
+{
+	{10, 3, 678}, 		/* Т */ 
+};
+
+/* Character descriptors for Impact 18pt(block #8) */
+/* { [Char width in bits], [Char height in bytes], [Offset into impact_18ptCharBitmaps in bytes] } */
+const uint16_t impact_18ptDescriptorsBlock8[][3] = 
+{
+	{11, 3, 708}, 		/* Х */ 
+};
+
+/* Character descriptors for Impact 18pt(block #9) */
+/* { [Char width in bits], [Char height in bytes], [Offset into impact_18ptCharBitmaps in bytes] } */
+const uint16_t impact_18ptDescriptorsBlock9[][3] = 
+{
+	{17, 3, 741}, 		/* Ы */ 
+};
+
+/* Character descriptors for Impact 18pt(block #10) */
+/* { [Char width in bits], [Char height in bytes], [Offset into impact_18ptCharBitmaps in bytes] } */
+const uint16_t impact_18ptDescriptorsBlock10[][3] = 
+{
+	{10, 3, 792}, 		/* а */ 
+};
+
+/* Character descriptors for Impact 18pt(block #11) */
+/* { [Char width in bits], [Char height in bytes], [Offset into impact_18ptCharBitmaps in bytes] } */
+const uint16_t impact_18ptDescriptorsBlock11[][3] = 
+{
+	{10, 3, 822}, 		/* е */ 
+};
+
+/* Character descriptors for Impact 18pt(block #12) */
+/* { [Char width in bits], [Char height in bytes], [Offset into impact_18ptCharBitmaps in bytes] } */
+const uint16_t impact_18ptDescriptorsBlock12[][3] = 
+{
+	{10, 3, 852}, 		/* з */ 
+	{11, 3, 882}, 		/* и */ 
+};
+
+/* Character descriptors for Impact 18pt(block #13) */
+/* { [Char width in bits], [Char height in bytes], [Offset into impact_18ptCharBitmaps in bytes] } */
+const uint16_t impact_18ptDescriptorsBlock13[][3] = 
+{
+	{11, 3, 915}, 		/* к */ 
+	{12, 3, 948}, 		/* л */ 
+	{14, 3, 984}, 		/* м */ 
+	{11, 3, 1026}, 		/* н */ 
+	{10, 3, 1059}, 		/* о */ 
+};
+
+/* Character descriptors for Impact 18pt(block #14) */
+/* { [Char width in bits], [Char height in bytes], [Offset into impact_18ptCharBitmaps in bytes] } */
+const uint16_t impact_18ptDescriptorsBlock14[][3] = 
+{
+	{10, 3, 1089}, 		/* р */ 
+	{10, 3, 1119}, 		/* с */ 
+	{10, 3, 1149}, 		/* т */ 
+	{11, 3, 1179}, 		/* у */ 
+};
+
+/* Character descriptors for Impact 18pt(block #15) */
+/* { [Char width in bits], [Char height in bytes], [Offset into impact_18ptCharBitmaps in bytes] } */
+const uint16_t impact_18ptDescriptorsBlock15[][3] = 
+{
+	{10, 3, 1212}, 		/* ч */ 
+};
+
+/* Block lookup array for Impact 18pt  */
+/* { start character, end character, ptr to descriptor block array } */
+const struct fontCharInfoLookup impact_18ptBlockLookup[] = 
+{
+	{'.', '.', &impact_18ptDescriptorsBlock0[0]},
+	{'0', ':', &impact_18ptDescriptorsBlock1[0]},
+	{192, 192, &impact_18ptDescriptorsBlock2[0]},
+	{194, 198, &impact_18ptDescriptorsBlock3[0]},
+	{202, 203, &impact_18ptDescriptorsBlock4[0]},
+	{205, 206, &impact_18ptDescriptorsBlock5[0]},
+	{208, 208, &impact_18ptDescriptorsBlock6[0]},
+	{210, 210, &impact_18ptDescriptorsBlock7[0]},
+	{213, 213, &impact_18ptDescriptorsBlock8[0]},
+	{219, 219, &impact_18ptDescriptorsBlock9[0]},
+	{224, 224, &impact_18ptDescriptorsBlock10[0]},
+	{229, 229, &impact_18ptDescriptorsBlock11[0]},
+	{231, 232, &impact_18ptDescriptorsBlock12[0]},
+	{234, 238, &impact_18ptDescriptorsBlock13[0]},
+	{240, 243, &impact_18ptDescriptorsBlock14[0]},
+	{247, 247, &impact_18ptDescriptorsBlock15[0]},
+};
+
+/* Font information for Impact 18pt */
+const struct fontInfo impact_18ptFontInfo =
+{
+	'.', /*  Start character */
+	247, /*  End character */
+	2, /*  Width, in pixels, of space character */
+	impact_18ptBlockLookup, /*  Character block lookup */
+	16,
+	0,
+	impact_18ptBitmaps, /*  Character bitmap array */
 };

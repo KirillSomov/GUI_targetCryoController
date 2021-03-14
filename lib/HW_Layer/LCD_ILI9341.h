@@ -62,26 +62,34 @@
 
 	// прототипы функций
 	void			LCD_portCfg(void);																												// настройка портов для LCD
+	
 	void 			LCD_sendCommand(uint16_t com);																						// посылка команды
 	void 			LCD_sendData(uint16_t data);																							// посылка данных
+	
 	void 			LCD_init(void);																														// инициализация LCD
+	
 	void 			LCD_setCursorPosition(uint16_t x1, uint16_t y1,
 																	uint16_t x2, uint16_t y2);													// установка курсора на LCD
+	
 	void 			LCD_fill(uint16_t color);																									// заливка всего экрана цветом
+	
 	void 			LCD_drawPixel(uint16_t x, uint16_t y,
 														 uint16_t color);																					// отрисовка пикселя
 	void 			LCD_drawFilledRectangle(uint16_t x0, uint16_t x1,
 																		uint16_t y0, uint16_t y1,
 																				uint16_t color);															// закрасить область
+	
 	void			LCD_drawPicture(uint32_t	x,	uint32_t	y,
 														uint16_t	pictureColor,
-														const	uint8_t	pictureArray[],	const	uint16_t	pictureInfoArray[][2]);		// отрисовка картинки
-	uint16_t	LCD_printChar(uint32_t	x,	uint32_t	y,
-													uint16_t	symbol,	uint16_t	fontColor,
-													const	uint8_t	charArray[],	const	uint16_t	charInfoArray[][3],	uint16_t	charOffset);
-	uint16_t	LCD_printString(uint32_t x, uint32_t y, char* str, uint16_t fontColor);		//
-
-	uint16_t	LCD_printChar2(uint32_t x, uint32_t y, uint16_t symbol, uint16_t fontColor, const struct fontInfo *fontInfoStruct);
-	uint16_t	LCD_printString2(uint32_t x, uint32_t y, char* str, uint16_t fontColor, const struct fontInfo *fontInfoStruct);
+														const	struct pictureInfo *pictureInfoStruct);							// отрисовка картинки
 	
+	uint16_t	LCD_printChar(uint32_t x,	uint32_t y,
+													uint16_t	symbol,
+													uint16_t	fontColor,
+													const struct fontInfo *fontInfoStruct);
+	uint16_t	LCD_printString(uint32_t x, uint32_t y,
+														char* str,	uint16_t fontColor,
+														const struct fontInfo *fontInfoStruct);
+	
+
 #endif

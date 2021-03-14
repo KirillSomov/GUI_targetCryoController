@@ -3,6 +3,7 @@
 ".\objects\main.o"
 ".\objects\gui.o"
 ".\objects\font.o"
+".\objects\picture.o"
 ".\objects\cpu.o"
 ".\objects\i2c.o"
 ".\objects\lcd_ili9341.o"

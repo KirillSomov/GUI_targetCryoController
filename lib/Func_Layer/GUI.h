@@ -27,18 +27,19 @@
 	// структура объекта лейбл
 	typedef struct
 	{
-		uint16_t	X0;								// координаты кнопки
+		uint16_t	X0;															// координаты кнопки
 		uint16_t	X1;
 		uint16_t	Y0;
 		uint16_t	Y1;
-		uint16_t	border;						// ширина границ
-		uint16_t	mainColor;				// цвет фона
-		uint16_t	borderColor;			// цвет границ
-		char			*str;							// текст
-		uint16_t	textColor;				// цвет текста
-		uint16_t	textMarginX;			// отступ текста по X
-		uint16_t	textMarginY;			// отступ текста по Y
-		void 			(*action)(void);	// действие
+		uint16_t	border;													// ширина границ
+		uint16_t	mainColor;											// цвет фона
+		uint16_t	borderColor;										// цвет границ
+		char			*str;														// текст
+		const struct fontInfo *fontInfoStruct;		// шрифт
+		uint16_t	textColor;											// цвет текста
+		uint16_t	textMarginX;										// отступ текста по X
+		uint16_t	textMarginY;										// отступ текста по Y
+		void 			(*action)(void);								// действие
 		
 		uint16_t	textLenght;
 	}Object_Label;
@@ -47,23 +48,24 @@
 	// структура объекта кнопка
 	typedef struct
 	{
-		uint16_t	X0;									// координаты кнопки
+		uint16_t	X0;															// координаты кнопки
 		uint16_t	X1;
 		uint16_t	Y0;
 		uint16_t	Y1;
-		uint16_t	border;							// ширина границ
-		uint16_t	mainColor;					// цвет кнопки
-		uint16_t	borderColor;				// цвет границ
-		char			*str;								// текст
-		uint16_t	textColor;					// цвет текста
-		uint16_t	textMarginX;				// отступ текста по X
-		uint16_t	textMarginY;				// отступ текста по Y
-		uint8_t		state;							//
-		volatile	uint16_t	msDelay;	// задержка до следующего нажатия
+		uint16_t	border;													// ширина границ
+		uint16_t	mainColor;											// цвет кнопки
+		uint16_t	borderColor;										// цвет границ
+		char			*str;														// текст
+		const struct fontInfo *fontInfoStruct;		// шрифт
+		uint16_t	textColor;											// цвет текста
+		uint16_t	textMarginX;										// отступ текста по X
+		uint16_t	textMarginY;										// отступ текста по Y
+		uint8_t		state;													//
+		volatile	uint16_t	msDelay;							// задержка до следующего нажатия
 		
-		uint16_t	textLenght;							//
-		uint8_t		flag_buttonWasClicked;	// 
-		uint16_t	timerVal;								// 
+		uint16_t	textLenght;											//
+		uint8_t		flag_buttonWasClicked;					// 
+		uint16_t	timerVal;												// 
 		
 		// действие по нажатию кнопки
 		void (*action)(void);		
@@ -157,40 +159,44 @@
 	void	GUI_Handler(void);																	// обработчик нажатия на дисплей
 
 	
-	void	GUI_createLabel(uint16_t	X0,	uint16_t	X1,				// X-координаты	// создать лейбл
-												uint16_t	Y0,	uint16_t	Y1,				// Y-координаты
-												uint16_t	border,									// ширина границ
-												uint16_t	mainColor,							// основной цвет
-												uint16_t	borderColor,						// цвет границ
-												char			*str,										// текст
-												uint16_t	textColor,							// цвет текста
-												uint16_t	textMarginX,						// отступ текста по X
-												uint16_t	textMarginY,						// отступ текста по Y
-												void			(*action)(void));				// функция привязаная к лейблу
+	void	GUI_createLabel(uint16_t	X0,	uint16_t	X1,			// X-координаты	// создать лейбл
+												uint16_t	Y0,	uint16_t	Y1,			// Y-координаты
+												uint16_t	border,								// ширина границ
+												uint16_t	mainColor,						// основной цвет
+												uint16_t	borderColor,					// цвет границ
+												char			*str,									// текст
+												uint16_t	textColor,						// цвет текста
+						const struct fontInfo *fontInfoStruct,			// шрифт
+												uint16_t	textMarginX,					// отступ текста по X
+												uint16_t	textMarginY,					// отступ текста по Y
+												void			(*action)(void));			// функция привязаная к лейблу
 	void	GUI_labelChangeText(uint8_t	labelNum,
 															char	*str,
-													uint16_t	textColor);						// сменить текст лейбла
+													uint16_t	textColor,
+							const struct fontInfo *fontInfoStruct);					// сменить текст лейбла
 	void	GUI_labelChangeMainColor(uint8_t	labelNum,
-																uint16_t	mainColor);			// сменить цвет лейбла
+																uint16_t	mainColor);		// сменить цвет лейбла
 
 
-	void	GUI_createButton(uint16_t	X0,	uint16_t	X1,				// X-координаты кнопки	// создать кнопку
-												uint16_t	Y0,	uint16_t	Y1,				// Y-координаты кнопки
-												uint16_t	border,									// ширина границ
-												uint16_t	mainColor,							// основной цвет кнопки
-												uint16_t	borderColor,						// цвет границ
-												char			*str,										// текст
-												uint16_t	textColor,							// цвет текста
-												uint16_t	textMarginX,						// отступ текста по X
-												uint16_t	textMarginY,						// отступ текста по Y											
-												uint8_t		state,									//
-												uint16_t	msDelay,								// задержка до следующего нажатия
-												void			(*action)(void));				// функция привязаная к кнопке
+	void	GUI_createButton(uint16_t	X0,	uint16_t	X1,			// X-координаты кнопки	// создать кнопку
+												uint16_t	Y0,	uint16_t	Y1,			// Y-координаты кнопки
+												uint16_t	border,								// ширина границ
+												uint16_t	mainColor,						// основной цвет кнопки
+												uint16_t	borderColor,					// цвет границ
+												char			*str,									// текст
+												uint16_t	textColor,						// цвет текста
+						const struct fontInfo *fontInfoStruct,			// шрифт
+												uint16_t	textMarginX,					// отступ текста по X
+												uint16_t	textMarginY,					// отступ текста по Y											
+												uint8_t		state,								//
+												uint16_t	msDelay,							// задержка до следующего нажатия
+												void			(*action)(void));			// функция привязаная к кнопке
 	void	GUI_buttonChangeText(uint8_t	buttonNum,
 																char	*str,
-														uint16_t	textColor);					// сменить текст кнопки
+														uint16_t	textColor,
+								const struct fontInfo *fontInfoStruct);				// сменить текст кнопки
 	void	GUI_buttonChangeMainColor(uint8_t	buttonNum,
-																uint16_t	mainColor);			// сменить цвет кнопки
+																uint16_t	mainColor);		// сменить цвет кнопки
 
 
 	void	GUI_createCanvas(uint16_t		X0,	uint16_t	X1,			// X-координаты кнопки	// создать холст

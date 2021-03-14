@@ -404,9 +404,9 @@
           <GroupName>Func_Layer</GroupName>
           <Files>
             <File>
-              <FileName>Font.h</FileName>
+              <FileName>link.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\lib\Func_Layer\Font.h</FilePath>
+              <FilePath>.\lib\Func_Layer\link.h</FilePath>
             </File>
             <File>
               <FileName>GUI.c</FileName>
@@ -419,19 +419,24 @@
               <FilePath>.\lib\Func_Layer\GUI.h</FilePath>
             </File>
             <File>
-              <FileName>link.h</FileName>
+              <FileName>Font.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\lib\Func_Layer\Font.c</FilePath>
+            </File>
+            <File>
+              <FileName>Font.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\lib\Func_Layer\link.h</FilePath>
+              <FilePath>.\lib\Func_Layer\Font.h</FilePath>
+            </File>
+            <File>
+              <FileName>Picture.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\lib\Func_Layer\Picture.c</FilePath>
             </File>
             <File>
               <FileName>Picture.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\lib\Func_Layer\Picture.h</FilePath>
-            </File>
-            <File>
-              <FileName>Font.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\lib\Func_Layer\Font.c</FilePath>
             </File>
           </Files>
         </Group>

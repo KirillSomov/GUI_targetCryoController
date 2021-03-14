@@ -79,10 +79,9 @@ int main(void)
 		for(uint8_t i = 0; i < 8; i++)
 			GUI_labelChangeText(i+12, &strBufNum[0], 0x0000);
 		delay_ms(250);
-		
+		*/
 		
 		GUI_Handler();
-		*/
 		
 		delay_ms(10);
 	}	
